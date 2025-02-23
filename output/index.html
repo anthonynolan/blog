@@ -1,172 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>Cathal and Dad</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-</head>
+        <head>
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta name="generator" content="Pelican" />
+                        <title>A Pelican Blog</title>
+                        <link rel="stylesheet" href="https://blog.cathalanddad.com/theme/css/main.css" />
+                                <link href="https://blog.cathalanddad.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+        </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Cathal and Dad</a></h1>
-                <nav><ul>
-                    <li><a href="/category/cooking.html">Cooking</a></li>
-                    <li><a href="/category/notes.html">Notes</a></li>
-                    <li><a href="/category/software.html">Software</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+        <body id="index" class="home">
+                <header id="banner" class="body">
+                        <h1><a href="https://blog.cathalanddad.com/">A Pelican Blog</a></h1>
+                        <nav><ul>
+                                                <li><a href="https://blog.cathalanddad.com/category/cooking.html">Cooking</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/health.html">Health</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/notes.html">Notes</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/software.html">Software</a></li>
+                        </ul></nav>
+                </header><!-- /#banner -->
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/learning-python.html">Learning Python</a></h1>
+                <aside id="featured" class="body">
+                    <article>
+                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/most-common-spanish-words-to-anki.html">Most Common Spanish words to Anki</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2024-11-16T14:50:00+01:00">
+        <abbr class="published" title="2025-02-23T14:50:00+00:00">
+                Published: Sun 23 February 2025
+        </abbr>
+
+        <p>In <a href="https://blog.cathalanddad.com/category/software.html">Software</a>.</p>
+        
+</footer><!-- /.post-info --><h1>Get the most common words from Spanish</h1>
+<p>Results will depend on the corpus used. I am not interested in accuracy, so just got a Spanish corpus from nltk. </p>
+<ul>
+<li>figured out which words were junk and removed them (underscores etc)</li>
+<li>Count frequencies</li>
+<li>Dump this to a list suitable for prompting an llm</li>
+</ul>
+<h2>Used this prompt</h2>
+<div class="highlight"><pre><span></span><code><span class="nv">Thanslate</span><span class="w"> </span><span class="nv">these</span><span class="w"> </span><span class="nv">words</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">english</span>.<span class="w"> </span><span class="nv">I</span><span class="w"> </span><span class="nv">want</span><span class="w"> </span><span class="nv">one</span><span class="w"> </span><span class="nv">spanish</span><span class="w"> </span><span class="nv">word</span><span class="w"> </span><span class="nv">followed</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">comma</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">english</span><span class="w"> </span><span class="nv">translation</span>.<span class="w"> </span><span class="err">&#39;para, como, p...</span>
+</code></pre></div>
+
+<p>Finally a bit of python to put them in the right format for anki import.</p>
+<p>The code is <a href="https://github.com/anthonynolan/most-common-spanish-words">here</a></p>                    </article>
+                </aside><!-- /#featured -->
+                    <section id="content" class="body">
+                        <h1>Other articles</h1>
+                        <hr />
+                        <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/vo2-max.html" rel="bookmark"
+                               title="Permalink to VO2 Max">VO2 Max</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2024-11-17T14:57:00+00:00">
+                Published: Sun 17 November 2024
+        </abbr>
+
+        <p>In <a href="https://blog.cathalanddad.com/category/health.html">Health</a>.</p>
+        
+</footer><!-- /.post-info -->                        <h2>Desire to improve fitness</h2>
+<p>I want to improve my overall level of fitness. VO2 max seems to be a reasonable way to measure this. A proxy for VO2max is a fitness test over a specific length of course. For example running a mile. For the test to be useful it …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/vo2-max.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/learning-python.html" rel="bookmark"
+                               title="Permalink to Learning Python">Learning Python</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2024-11-16T14:50:00+00:00">
                 Published: Sat 16 November 2024
         </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/anthony-nolan.html">Anthony Nolan</a>
-        </address>
-<p>In <a href="/category/software.html">Software</a>.</p>
-
-</footer><!-- /.post-info --><h1>Not the <em>Hello World!</em> version</h1>
+        <p>In <a href="https://blog.cathalanddad.com/category/software.html">Software</a>.</p>
+        
+</footer><!-- /.post-info -->                        <h1>Not the <em>Hello World!</em> version</h1>
 <p>A list of resources and practices to get python beyond the basics</p>
 <h2>The book</h2>
-<p>I am using <a href="https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/">Fluent Python</a> by Luciano Romalho as the starting point. I bought this book years ago and never really got the best value from it. I skipped too much of it. Now on a revisit some sections are no longer as up to date as I would like, but mostly it is still excellent. There is a second edition (linked) which I am sure brings it up to date. If python is a key skill you should buy a paper copy of this book. It is well worth the money.</p>
-<p>My process is to take a chapter at a time and read it in depth - this can take a few hours for the more substantial chapters which in this book is most of them. 
-I have a python repl at the ready to try out some of the examples. </p>
-<p>(The new <a href="https://docs.python.org/3/whatsnew/3.13.html#whatsnew313-better-interactive-interpreter">3.13 repl</a> is great. Simple things like multiline editing that works and colour output are a big step up from the seriously outdated prior versions)</p>
-<h2>Commit to memory</h2>
-<p>Then I try to extract anything that I need to remember with <a href="https://apps.ankiweb.net/">Anki</a>. This is a bit of a chore at first, but after a while you notice yourself remembering many more significant things. Working in technology there is a lot to take in and a lot of confusion can creep into your work if you don't make this part of your practice. </p>
-<h2>Practice with an AI</h2>
-<p>This kind of interlaces with the reading and memorising sections. I keep a single thread <a href="https://chatgpt.com/share/6738b604-2374-8013-bd34-734e7df6593a">conversation</a> in Chat gpt and tell it what section I am interested in practicing. It usually gives me 'starter code' - the answer - even though I tell it I am trying to learn, but that is no harm as I just ignore that until I have given my stuff a go. I find this a very effective way to learn as I can ask questions for clarificaiton, but am not looking for the bulk of the material to come from the ai. </p>
-<p>As I progress with this I will share photos of the contents pages of the book with the model to see what else it can come up with. </p>
-<p>So far I have been at this for a couple of weeks - in my spare time with a good bit extra at the weekends. A mixture of glad that I am learning this important skill at last and disappointment that I have let this lie for so long without skilling up properly.</p>
-<h2>Regular practices to keep up</h2>
-<p>There is a lot of useful information in the python docs. From the whats new sections to the PEPs (both new ones and older ones). The bar is high in these docs, so they are an opportunity not to be missed. There is so much here that it is almost always time well spent.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>I am using <a href="https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/">Fluent Python</a> by Luciano Romalho as the starting point. I bought this book years ago and never really got the best value from it. I skipped too much …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/learning-python.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/notes-on-the-man-from-the-future-fission.html" rel="bookmark"
-                           title="Permalink to Notes on The Man from the Future - fission">Notes on The Man from the Future - fission</a></h1>
-                </header>
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/notes-on-the-man-from-the-future-fission.html" rel="bookmark"
+                               title="Permalink to Notes on The Man from the Future - fission">Notes on The Man from the Future - fission</a></h1>
+                    </header>
 
-                <div class="entry-content">
+                    <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2024-07-30T09:39:00+02:00">
+        <abbr class="published" title="2024-07-30T09:39:00+01:00">
                 Published: Tue 30 July 2024
         </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/anthony-nolan.html">Anthony Nolan</a>
-        </address>
-<p>In <a href="/category/notes.html">Notes</a>.</p>
+        <p>In <a href="https://blog.cathalanddad.com/category/notes.html">Notes</a>.</p>
+        
+</footer><!-- /.post-info -->                        <p>The fissile material was Plutonium. It was in the shape of 2 hemispheres with a central core of Berillium and Polonium - the initiator. The initiator's job was to produce some neutrons to start the nuclear chain reaction in the surrounding sphere of Pu. The Pu is sub critical as assembled …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/notes-on-the-man-from-the-future-fission.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
-</footer><!-- /.post-info -->                <p>The fissile material was Plutonium. It was in the shape of 2 hemispheres with a central core of Berillium and Polonium - the initiator. The initiator's job was to produce some neutrons to start the nuclear chain reaction in the surrounding sphere of Pu. The Pu is sub critical as assembled …</p>
-                <a class="readmore" href="/notes-on-the-man-from-the-future-fission.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/curry-improvement-guide-with-chat-gpt.html" rel="bookmark"
+                               title="Permalink to Curry improvement guide with Chat GPT">Curry improvement guide with Chat GPT</a></h1>
+                    </header>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/curry-improvement-guide-with-chat-gpt.html" rel="bookmark"
-                           title="Permalink to Curry improvement guide with Chat GPT">Curry improvement guide with Chat GPT</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2024-07-25T17:26:00+02:00">
+        <abbr class="published" title="2024-07-25T17:26:00+01:00">
                 Published: Thu 25 July 2024
         </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/anthony-nolan.html">Anthony Nolan</a>
-        </address>
-<p>In <a href="/category/cooking.html">Cooking</a>.</p>
-
-</footer><!-- /.post-info -->                <h2>Sous Chef GPT</h2>
+        <p>In <a href="https://blog.cathalanddad.com/category/cooking.html">Cooking</a>.</p>
+        
+</footer><!-- /.post-info -->                        <h2>Sous Chef GPT</h2>
 <p>I wanted to see if I could use Chat GPT to become a better cook. I tried the Sous Chef GPT that Open AI produced themselves a while ago. I told it some things I had and the sort of dish I would like. It was a …</p>
-                <a class="readmore" href="/curry-improvement-guide-with-chat-gpt.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+                        <a class="readmore" href="https://blog.cathalanddad.com/curry-improvement-guide-with-chat-gpt.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/vienna-how-the-city-of-ideas-created-the-modern-world-by-richard-cockett.html" rel="bookmark"
-                           title="Permalink to Vienna - How the city of ideas created the modern world by Richard Cockett">Vienna - How the city of ideas created the modern world by Richard Cockett</a></h1>
-                </header>
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/vienna-how-the-city-of-ideas-created-the-modern-world-by-richard-cockett.html" rel="bookmark"
+                               title="Permalink to Vienna - How the city of ideas created the modern world by Richard Cockett">Vienna - How the city of ideas created the modern world by Richard Cockett</a></h1>
+                    </header>
 
-                <div class="entry-content">
+                    <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2024-07-24T15:51:00+02:00">
+        <abbr class="published" title="2024-07-24T15:51:00+01:00">
                 Published: Wed 24 July 2024
         </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/anthony-nolan.html">Anthony Nolan</a>
-        </address>
-<p>In <a href="/category/notes.html">Notes</a>.</p>
-
-</footer><!-- /.post-info -->                <h2>Freedom of movement in the empire</h2>
+        <p>In <a href="https://blog.cathalanddad.com/category/notes.html">Notes</a>.</p>
+        
+</footer><!-- /.post-info -->                        <h2>Freedom of movement in the empire</h2>
 <p>The Emperor of Austria-Hungary insisted on freedom of movement of people within the Empire. This allowed large numbers of people to move from the east of the country to the city of Vienna and its suburbs. This is a simple case of allowing people …</p>
-                <a class="readmore" href="/vienna-how-the-city-of-ideas-created-the-modern-world-by-richard-cockett.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+                        <a class="readmore" href="https://blog.cathalanddad.com/vienna-how-the-city-of-ideas-created-the-modern-world-by-richard-cockett.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/daddy-is-a-doctor.html" rel="bookmark"
-                           title="Permalink to Daddy is a Doctor">Daddy is a Doctor</a></h1>
-                </header>
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/daddy-is-a-doctor.html" rel="bookmark"
+                               title="Permalink to Daddy is a Doctor">Daddy is a Doctor</a></h1>
+                    </header>
 
-                <div class="entry-content">
+                    <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2024-07-23T10:22:00+02:00">
+        <abbr class="published" title="2024-07-23T10:22:00+01:00">
                 Published: Tue 23 July 2024
         </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/anthony-nolan.html">Anthony Nolan</a>
-        </address>
-<p>In <a href="/category/notes.html">Notes</a>.</p>
-
-</footer><!-- /.post-info -->                <p>This is an idea from Daniel Dennett's book Intuition pumps and other tools for thinking.</p>
+        <p>In <a href="https://blog.cathalanddad.com/category/notes.html">Notes</a>.</p>
+        
+</footer><!-- /.post-info -->                        <p>This is an idea from Daniel Dennett's book Intuition pumps and other tools for thinking.</p>
 <p>The idea here is that a little kid could say something like the above and not really know what this meant. This does not mean they are lying, but their concept of what a doctor …</p>
-                <a class="readmore" href="/daddy-is-a-doctor.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://marginalrevolution.com/">Marginal Revolution</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+                        <a class="readmore" href="https://blog.cathalanddad.com/daddy-is-a-doctor.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
+                    </ol><!-- /#posts-list -->
+                    </section><!-- /#content -->
+                <section id="extras" class="body">
+                                <div class="social">
+                                        <h2>social</h2>
+                                        <ul>
+                                                        <li><a href="https://blog.cathalanddad.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
-                            <li><a href="https://x.com/anthonynolandub">Twitter</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+                                        </ul>
+                                </div><!-- /.social -->
+                </section><!-- /#extras -->
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
+                <footer id="contentinfo" class="body">
+                        <address id="about" class="vcard body">
+                                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                        </address><!-- /#about -->
 
-                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+                        <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                </footer><!-- /#contentinfo -->
 
-</body>
+        </body>
 </html>
