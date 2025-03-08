@@ -1,0 +1,15 @@
+ul{
+    list-style: none;
+}
+
+.container{
+    padding: 20px   
+}
+
+img{
+    max-width: 50%;
+}
+
+.text{
+    text-align: center;
+}
