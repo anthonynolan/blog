@@ -3,3 +3,4 @@ __pycache__/
 pelicanconf.py
 publishconf.py
 tasks.pyvenv/
+venv/
