@@ -8,3 +8,5 @@ Short video showing the trails left by the object under gravity.
 [video](https://youtu.be/blg1XQLY1C8)
 
  [code here](https://github.com/anthonynolan/physics)
+
+ The numbers used are not realistic for a gravity simulation and are modified to make the sim responsive. 
