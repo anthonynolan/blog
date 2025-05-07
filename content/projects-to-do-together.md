@@ -3,6 +3,16 @@ Category: Things to do with kids
 Date: 2025-05-07
 Author: Anthony
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
 Over the last couple of summers Cathal has done some classes for kids at local college. The classes are aimed at children who are interested in things like Science and Maths, but there is a broad range. The catalog arrived this year and Cathal decided that he did not want to go to the college to do any of the classes. I thought that I could get some fun activities from these for us to do together. 
 
 I took a photo of one of the short course descriptions:
