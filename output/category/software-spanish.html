@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta name="generator" content="Pelican" />
+                        <title>Cathal and Dad - Software, Spanish</title>
+                        <link rel="stylesheet" href="/theme/css/main.css" />
+        </head>
+
+        <body id="index" class="home">
+                <header id="banner" class="body">
+                        <h1><a href="/">Cathal and Dad</a></h1>
+                        <nav><ul>
+                                                <li><a href="/category/books.html">Books</a></li>
+                                                <li><a href="/category/cooking.html">Cooking</a></li>
+                                                <li><a href="/category/health.html">Health</a></li>
+                                                <li><a href="/category/notes.html">Notes</a></li>
+                                                <li><a href="/category/physics.html">Physics</a></li>
+                                                <li><a href="/category/software.html">Software</a></li>
+                                                <li class="active"><a href="/category/software-spanish.html">Software, Spanish</a></li>
+                                                <li><a href="/category/spanish.html">Spanish</a></li>
+                                                <li><a href="/category/things-to-do-with-kids.html">Things to do with kids</a></li>
+                        </ul></nav>
+                </header><!-- /#banner -->
+
+                <aside id="featured" class="body">
+                    <article>
+                        <h1 class="entry-title"><a href="/most-common-spanish-words-to-anki.html">Most Common Spanish words to Anki</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2025-02-23T14:50:00+01:00">
+                Published: Sun 23 February 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="/author/anthony-nolan.html">Anthony Nolan</a>
+                </address>
+        <p>In <a href="/category/software-spanish.html">Software, Spanish</a>.</p>
+        
+</footer><!-- /.post-info --><h1>Get the most common words from Spanish</h1>
+<p>Results will depend on the corpus used. I am not interested in accuracy, so just got a Spanish corpus from nltk. </p>
+<ul>
+<li>figured out which words were junk and removed them (underscores etc)</li>
+<li>Count frequencies</li>
+<li>Dump this to a list suitable for prompting an llm</li>
+</ul>
+<h2>Used this prompt</h2>
+<div class="highlight"><pre><span></span><code><span class="nv">Thanslate</span><span class="w"> </span><span class="nv">these</span><span class="w"> </span><span class="nv">words</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">english</span>.<span class="w"> </span><span class="nv">I</span><span class="w"> </span><span class="nv">want</span><span class="w"> </span><span class="nv">one</span><span class="w"> </span><span class="nv">spanish</span><span class="w"> </span><span class="nv">word</span><span class="w"> </span><span class="nv">followed</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">comma</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">english</span><span class="w"> </span><span class="nv">translation</span>.<span class="w"> </span><span class="err">&#39;para, como, p...</span>
+</code></pre></div>
+
+<p>Finally a bit of python to put them in the right format for anki import.</p>
+<p>The code is <a href="https://github.com/anthonynolan/most-common-spanish-words">here</a></p>                    </article>
+                </aside><!-- /#featured -->
+                <section id="extras" class="body">
+                                <div class="blogroll">
+                                        <h2>links</h2>
+                                        <ul>
+                                                        <li><a href="https://getpelican.com/">Pelican</a></li>
+                                                        <li><a href="https://www.python.org/">Python.org</a></li>
+                                                        <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                                                        <li><a href="#">You can modify those links in your config file</a></li>
+                                        </ul>
+                                </div><!-- /.blogroll -->
+                                <div class="social">
+                                        <h2>social</h2>
+                                        <ul>
+
+                                                        <li><a href="#">You can add links in your config file</a></li>
+                                                        <li><a href="#">Another social link</a></li>
+                                        </ul>
+                                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+                <footer id="contentinfo" class="body">
+                        <address id="about" class="vcard body">
+                                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                        </address><!-- /#about -->
+
+                        <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                </footer><!-- /#contentinfo -->
+
+        </body>
+</html>
