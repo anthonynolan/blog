@@ -17,7 +17,7 @@ Over the last couple of summers Cathal has done some classes for kids at local c
 
 I took a photo of one of the short course descriptions:
 
-<img src="images/cty.png" width="150"/>
+<img src="{static}/images/cty.png" width="150"/>
 
 
 And asked chat gpt to put together an outline of a a course that I could go through with Cathal. 
