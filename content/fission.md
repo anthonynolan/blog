@@ -1,6 +1,7 @@
 Title: Notes on The Man from the Future - fission
 Date: 2024-07-30 09:39
 Category: Notes
+Author: Anthony
 
 The fissile material was Plutonium. It was in the shape of 2 hemispheres with a central core of Berillium and Polonium - the initiator. The initiator's job was to produce some neutrons to start the nuclear chain reaction in the surrounding sphere of Pu. The Pu is sub critical as assembled, but the high explosive lenses surrounding it are used to squash it into a critical sphere along with getting the initiator to work.
 Surrounding the Pu core is a thick layer of unrefined Uranium. This is very high density material - a forerunner of depleted Uranium? Natural Uranium has about 0.7% of the fissile isotope. Depleted uranium has less. It is a very dense material - about 70% more dense than lead. Used in weapons, radioactive material transport. 

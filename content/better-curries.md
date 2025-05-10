@@ -1,6 +1,7 @@
 Title: Curry improvement guide with Chat GPT
 Date: 2024-07-25 17:26
 Category: Cooking
+Author: Anthony
 
 ## Sous Chef GPT
 

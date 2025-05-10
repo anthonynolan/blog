@@ -1,6 +1,7 @@
 Title: Most Common Spanish words to Anki
 Date: 2025-02-23 14:50
-Category: Software, Spanish
+Category: Software
+Author: Anthony
 
 # Get the most common words from Spanish
 

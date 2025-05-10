@@ -1,6 +1,7 @@
 Title: Daddy is a Doctor
 Date: 2024-07-23 10:22
 Category: Notes
+Author: Anthony
 
 This is an idea from Daniel Dennett's book Intuition pumps and other tools for thinking.
 

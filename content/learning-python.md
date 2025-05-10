@@ -1,6 +1,7 @@
 Title: Learning Python
 Date: 2024-11-16 14:50
 Category: Software
+Author: Anthony
 
 # Not the _Hello World!_ version
 
