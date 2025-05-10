@@ -2,6 +2,16 @@ Title: VO2 Max
 Date: 2024-11-17 14:57
 Category: Health
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
 ## Desire to improve fitness
 
 I want to improve my overall level of fitness. VO2 max seems to be a reasonable way to measure this. A proxy for VO2max is a fitness test over a specific length of course. For example running a mile. For the test to be useful it needs to be repeatable and give consistent results over short periods of time. After an initial few attempts the typical time on the test needs to settle down to be reasonably repeatable. 

@@ -3,6 +3,17 @@ Date: 2024-07-25 17:26
 Category: Cooking
 Author: Anthony
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+
 ## Sous Chef GPT
 
 I wanted to see if I could use Chat GPT to become a better cook. I tried the Sous Chef GPT that Open AI produced themselves a while ago. I told it some things I had and the sort of dish I would like. It was a disaster. We did not even eat it. 

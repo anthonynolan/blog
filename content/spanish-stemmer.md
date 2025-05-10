@@ -3,6 +3,16 @@ Date: 2025-02-23 14:50
 Category: Software
 Author: Anthony
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
 # Get the most common words from Spanish
 
 Results will depend on the corpus used. I am not interested in accuracy, so just got a Spanish corpus from nltk. 

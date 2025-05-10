@@ -2,6 +2,16 @@ Title: Vienna - How the city of ideas created the modern world by Richard Cocket
 Date: 2024-07-24 15:51
 Category: Notes
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
 
 ## Freedom of movement in the empire
 The Emperor of Austria-Hungary insisted on freedom of movement of people within the Empire. This allowed large numbers of people to move from the east of the country to the city of Vienna and its suburbs. This is a simple case of allowing people to move from places of low productivity to places of high. I wonder what the impact was the places that experienced this talent drain?

@@ -3,6 +3,17 @@ Date: 2024-11-16 14:50
 Category: Software
 Author: Anthony
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+
 # Not the _Hello World!_ version
 
 A list of resources and practices to get python beyond the basics

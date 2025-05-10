@@ -3,6 +3,17 @@ Date: 2024-07-23 10:22
 Category: Notes
 Author: Anthony
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+
 This is an idea from Daniel Dennett's book Intuition pumps and other tools for thinking.
 
 The idea here is that a little kid could say something like the above and not really know what this meant. This does not mean they are lying, but their concept of what a doctor is (or even a daddy) is not well formed. As they grow up and find out more about life they will have a greater understanding of what those words mean, but initially it is quite an isolated belief for them.

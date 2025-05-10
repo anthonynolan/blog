@@ -1,7 +1,8 @@
-Title: Physics Simulation with pygame
-Date: 2025-04-04 19:15
-Category: Physics
+Title: A flexibility improvement programme from Chat GPT
+Category: 
+Date: 2025-05-10
 Author: Anthony
+Status: draft
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -12,9 +13,3 @@ Author: Anthony
 
   gtag('config', 'G-FYDC27JYB4');
 </script>
-
-
-<video width="320" height="240" controls>
-  <source src="{static}/video/video.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
