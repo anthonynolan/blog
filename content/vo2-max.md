@@ -1,6 +1,7 @@
 Title: VO2 Max
-Date: 2024-11-17 14:57
+Date: 2025-05-11
 Category: Health
+Status: published
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -11,6 +12,8 @@ Category: Health
 
   gtag('config', 'G-FYDC27JYB4');
 </script>
+
+(initial draft date 2024-11-17)
 
 ## Desire to improve fitness
 
@@ -27,8 +30,15 @@ To do this I need to get fitter - fitness of this sort is really the ability of 
 https://peterattiamd.com/how-does-vo2-max-correlate-with-longevity/
 
 
+## Experiments
 
-method
+Update May 11th 2025
 
-progress so far
+My aerobic fitness is quite poor at the moment. So holding off on the longer cycles until I can get a better base level of fitness. Will try some interval training first.
+
+- Warmup cycle first
+- Sprint for 10 seconds followed by pause for 30
+- repeat 10 times
+
+
 
