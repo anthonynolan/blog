@@ -32,7 +32,7 @@ https://peterattiamd.com/how-does-vo2-max-correlate-with-longevity/
 
 ## Experiments
 
-Update May 11th 2025
+### May 11th 2025
 
 My aerobic fitness is quite poor at the moment. So holding off on the longer cycles until I can get a better base level of fitness. Will try some interval training first.
 
@@ -40,5 +40,8 @@ My aerobic fitness is quite poor at the moment. So holding off on the longer cyc
 - Sprint for 10 seconds followed by pause for 30
 - repeat 10 times
 
+### Results
+(Monday May 12th 2025) 
+Although the 10 second sprints were a bit short, they definitely seemed to boost the amount of effort on the cycle significantly. The cycle was shorter than my normal distance, but I was still very tired with my energy levels sapped when I returned home. Also there were quite a lot of people using the cycle lane and the shorter bursts of speed were easier to do safely. So I did not stick strictly to the 10 second and 30 second durations that I had intended. I still think this is a good workout. I will probably try as shorter one next time to see what sort of output I can give.
 
 
