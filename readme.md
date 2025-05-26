@@ -12,3 +12,7 @@
 
 
 ```./deploy.sh "Commit comment here"``
+
+## To create a draft
+
+``` ./create_draft.sh "Post title goes here"
