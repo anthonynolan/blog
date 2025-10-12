@@ -1,1 +1,1 @@
-pelican --autoreload --listen
+pelican --autoreload --listen --port 8001
