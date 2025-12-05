@@ -15,6 +15,7 @@
                                                 <li><a href="/category/books.html">Books</a></li>
                                                 <li><a href="/category/cooking.html">Cooking</a></li>
                                                 <li><a href="/category/health.html">Health</a></li>
+                                                <li><a href="/category/misc.html">misc</a></li>
                                                 <li><a href="/category/notes.html">Notes</a></li>
                                                 <li><a href="/category/physics.html">Physics</a></li>
                                                 <li><a href="/category/self-improvement.html">Self improvement</a></li>
@@ -26,16 +27,16 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="/changing-my-spanish-language-goal.html">Changing my Spanish language goal</a></h1>
+                        <h1 class="entry-title"><a href="/annotating-video-of-an-irish-dancer.html">Annotating video of an Irish Dancer</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2025-10-12T00:00:00+02:00">
-                Published: Sun 12 October 2025
+        <abbr class="published" title="2025-12-05T00:00:00+01:00">
+                Published: Fri 05 December 2025
         </abbr>
 
                 <address class="vcard author">
                         By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="/category/spanish.html">Spanish</a>.</p>
+        <p>In <a href="/category/misc.html">misc</a>.</p>
         
 </footer><!-- /.post-info --><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -47,16 +48,53 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<h1>Goal factoring</h1>
-<p>I have been following the Less Wrong <a href="https://www.lesswrong.com/s/d922gAtBM8JNzkKKJ">Training Regime</a> for a few days now. It is very interesting with some useful techniques around becoming more rational in general. Today I read about Goal Factoring. This is where you look at the actions you are taking on some sort of regular basis. Like going to the gym and figure out what goals they contribute to. Stronger joints might be an example here. Also things they detract from: going to the gym takes time. </p>
-<p>There are a set of steps that you go through to really tidy up your goals and habits. It is a different way of approaching this for me. I often find that goals and habits become stale over time, so weeking out like this is good. </p>
-<p>To help this process along and get a better understanding I decided to ask chat gpt to help me rafactor my learning Spanish goal. I have been working on this for up to an hour a day for most of this year and feel that my progress has stagnated a bit lately. The full conversation is <a href="https://chatgpt.com/share/68eb8a82-c4d4-8013-93e5-4d5b4e7afd02">here</a>. Overall I really like this sort of input/guidance. It is easy to get into a rut with things like learning long lists of vocabulary. It is time consuming and ultimately can be an almost pointless video game of scoring points. Developing habits that you just do automatically is good, but they need to be checked and changed every now and again.</p>
-<p>I started taking the advice today and really dug into the first paragraph of my Harry Potter book. It is a few months since I read that part and I found it much easier to understand, but there was still plenty to clarify. I have taken notes and will continue at this spot tomorrow. It will be great if this works, because learning spanish has been taking me a long time and I would like to use that time for something else, but not throw away all of the work I have done.</p>                    </article>
+<h1>Idea</h1>
+<p>I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she can be seen more clearly. </p>
+<p>I did something like this for a project I did recently to track a dumbbell in an image. I took the approach of playing the video in a browser and showing an overlay of a red bounding box. The box was movable as the video played and the coordinates of the box were written to the console as the video played and the box moved. </p>
+<p>This approach gave quite a jerky movement of the box. This may have been something related to how the playback worked in the browser, or more likely how the coordinates were written to the console. I an effort to do better on an idea like this I wanted to try some automatic annotation tools.</p>
+<h1>CVAT</h1>
+<p>This is an opersource fairly high end tool for annotating video. I uploaded my video and manually created a bounding box. The process of interpolating this or tracking with AI is not straightforward. I can either learn more about this approach - which may pay dividends in the future for other projects - or can revert to the browser method and see if I can improve that. </p>
+<p>The dancer does not move in a nice linear fashion like the pool balls in the videos from CVAT on youtube, but interpolation may be the best way to go. Quite a steep learning curve for these tools but that is to be expected. Labeling video is not an easy task and there are a lot of options.</p>
+<h1>References</h1>
+<p>CVAT is at http://cvat.ai</p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
                         <hr />
                         <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="/changing-my-spanish-language-goal.html" rel="bookmark"
+                               title="Permalink to Changing my Spanish language goal">Changing my Spanish language goal</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-10-12T00:00:00+02:00">
+                Published: Sun 12 October 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="/category/spanish.html">Spanish</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<h1>Goal factoring</h1>
+<p>I have been following the Less Wrong <a href="https://www.lesswrong.com/s/d922gAtBM8JNzkKKJ">Training Regime</a> for a few days now. It is very interesting with some useful techniques around becoming more rational in general. Today I read about …</p>
+                        <a class="readmore" href="/changing-my-spanish-language-goal.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>
