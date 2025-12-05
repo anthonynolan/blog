@@ -30,4 +30,3 @@ The dancer does not move in a nice linear fashion like the pool balls in the vid
 # References
 
 CVAT is at http://cvat.ai
-

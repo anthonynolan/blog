@@ -4,8 +4,9 @@
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta name="generator" content="Pelican" />
-                        <title>Cathal and Dad - misc</title>
+                        <title>Examining an image watermark</title>
                         <link rel="stylesheet" href="/theme/css/main.css" />
+    <meta name="description" content="window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FYDC27JYB4');..." />
         </head>
 
         <body id="index" class="home">
@@ -24,10 +25,15 @@
                                                 <li><a href="/category/things-to-do-with-kids.html">Things to do with kids</a></li>
                         </ul></nav>
                 </header><!-- /#banner -->
+  <section id="content" class="body">
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/examining-an-image-watermark.html" rel="bookmark"
+             title="Permalink to Examining an image watermark">Examining an image watermark</a></h1>
+      </header>
 
-                <aside id="featured" class="body">
-                    <article>
-                        <h1 class="entry-title"><a href="/annotating-video-of-an-irish-dancer.html">Annotating video of an Irish Dancer</a></h1>
+      <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2025-12-05T00:00:00+01:00">
                 Published: Fri 05 December 2025
@@ -38,7 +44,7 @@
                 </address>
         <p>In <a href="/category/misc.html">misc</a>.</p>
         
-</footer><!-- /.post-info --><!-- Google tag (gtag.js) -->
+</footer><!-- /.post-info -->        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -49,54 +55,16 @@
 </script>
 
 <h1>Idea</h1>
-<p>I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she can be seen more clearly. </p>
-<p>I did something like this for a project I did recently to track a dumbbell in an image. I took the approach of playing the video in a browser and showing an overlay of a red bounding box. The box was movable as the video played and the coordinates of the box were written to the console as the video played and the box moved. </p>
-<p>This approach gave quite a jerky movement of the box. This may have been something related to how the playback worked in the browser, or more likely how the coordinates were written to the console. I an effort to do better on an idea like this I wanted to try some automatic annotation tools.</p>
-<h1>CVAT</h1>
-<p>This is an opersource fairly high end tool for annotating video. I uploaded my video and manually created a bounding box. The process of interpolating this or tracking with AI is not straightforward. I can either learn more about this approach - which may pay dividends in the future for other projects - or can revert to the browser method and see if I can improve that. </p>
-<p>The dancer does not move in a nice linear fashion like the pool balls in the videos from CVAT on youtube, but interpolation may be the best way to go. Quite a steep learning curve for these tools but that is to be expected. Labeling video is not an easy task and there are a lot of options.</p>
-<h1>References</h1>
-<p>CVAT is at http://cvat.ai</p>                    </article>
-                </aside><!-- /#featured -->
-                    <section id="content" class="body">
-                        <h1>Other articles</h1>
-                        <hr />
-                        <ol id="posts-list" class="hfeed">
+<p>I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just something interesting to try.</p>
+<p>I have a jupyter notebook which takes the image and turns it into grayscale with Open CV. The grayscale is a single array with the dims of the original image. I can display that with jupyter. </p>
+<p>I manually identified a part of the image with a good clear piece of water mark in it. So I created a smaller patch array of just this area. My notebook then draws a vertical line on this patch and plots the values of the pixels along this line as a normal timeseries plot. Animating this process for all of the slices of image gives a nice animated plot of the intensity of the pixels along that line. </p>
+<p>The image here shows a single example. </p>
+<p><img alt="image" src="images/image_slice.png"></p>
+<p>The intensity plot on the left shows 2 nice high peaks for the intersections of the watermark. Next up I am going to see if I can automatically find these pixels in the image.</p>
+      </div><!-- /.entry-content -->
 
-                <li><article class="hentry">
-                    <header>
-                        <h1><a href="/examining-an-image-watermark.html" rel="bookmark"
-                               title="Permalink to Examining an image watermark">Examining an image watermark</a></h1>
-                    </header>
-
-                    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2025-12-05T00:00:00+01:00">
-                Published: Fri 05 December 2025
-        </abbr>
-
-                <address class="vcard author">
-                        By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
-                </address>
-        <p>In <a href="/category/misc.html">misc</a>.</p>
-        
-</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FYDC27JYB4');
-</script>
-
-<h1>Idea</h1>
-<p>I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just …</p>
-                        <a class="readmore" href="/examining-an-image-watermark.html">read more</a>
-                    </div><!-- /.entry-content -->
-                </article></li>
-                    </ol><!-- /#posts-list -->
-                    </section><!-- /#content -->
+    </article>
+  </section>
                 <section id="extras" class="body">
                                 <div class="blogroll">
                                         <h2>links</h2>
