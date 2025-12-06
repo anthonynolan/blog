@@ -4,7 +4,7 @@
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta name="generator" content="Pelican" />
-                        <title>Cathal and Dad - Software</title>
+                        <title>Cathal and Dad - Image processing</title>
                         <link rel="stylesheet" href="/theme/css/main.css" />
         </head>
 
@@ -15,11 +15,11 @@
                                                 <li><a href="/category/books.html">Books</a></li>
                                                 <li><a href="/category/cooking.html">Cooking</a></li>
                                                 <li><a href="/category/health.html">Health</a></li>
-                                                <li><a href="/category/image-processing.html">Image processing</a></li>
+                                                <li class="active"><a href="/category/image-processing.html">Image processing</a></li>
                                                 <li><a href="/category/notes.html">Notes</a></li>
                                                 <li><a href="/category/physics.html">Physics</a></li>
                                                 <li><a href="/category/self-improvement.html">Self improvement</a></li>
-                                                <li class="active"><a href="/category/software.html">Software</a></li>
+                                                <li><a href="/category/software.html">Software</a></li>
                                                 <li><a href="/category/spanish.html">Spanish</a></li>
                                                 <li><a href="/category/things-to-do-with-kids.html">Things to do with kids</a></li>
                         </ul></nav>
@@ -27,16 +27,16 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="/first-vibecoding-mistakes.html">First vibecoding mistakes</a></h1>
+                        <h1 class="entry-title"><a href="/video-annotation-in-a-browser.html">Video annotation in a browser</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2025-05-26T00:00:00+02:00">
-                Published: Mon 26 May 2025
+        <abbr class="published" title="2025-12-06T00:00:00+01:00">
+                Published: Sat 06 December 2025
         </abbr>
 
                 <address class="vcard author">
                         By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="/category/software.html">Software</a>.</p>
+        <p>In <a href="/category/image-processing.html">Image processing</a>.</p>
         
 </footer><!-- /.post-info --><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -48,19 +48,10 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<p>I started the deeplearning.ai course on vibecoding with Replit today and already I can see some of the mistakes I have been making. Here are some of my takeaways so far.</p>
-<h2>Pick one feature to build at a time and know exactly what you are expecting</h2>
-<p>I have been using cline for coding and have frequently made the mistake of putting more than one ask in the prompt. The sophistication of llms may give the impression that they could handle this, but in vibecoding at the moment this is a bad idea. Along with making it harder for the llm to do its job it is harder for you to determine that the requested features work.</p>
-<ul>
-<li>So create a branch in git</li>
-<li>decide what you want and </li>
-<li>write it out in text. Refine this text until it is very clear. </li>
-<li>Decide what context the llm needs. I try to keep this as short as possible to avoid confusion, but make sure it has what it needs and it not shooting in the dark. Your context is likely to stick with a few files while you are developing a feature or set of features, but keep an eye on it as you proceed so you are not leaving out something important.</li>
-</ul>
-<h2>One feature one session</h2>
-<p>Once you have what you need - by a combination of vibecoding and fixing things up yourself - check it in and start a new session in your assistant. This should keep things reasonably clean.</p>
-<h2>Don't lose your understanding of what everything does</h2>
-<p>Coding this way is not yet at the fire and forget stage. It is easy to get into a mess that you need to fix yourself. I sometimes drop chunks of problematic code into chat gpt at this stage to get help fixing it. </p>                    </article>
+<h1>Collecting dancer coordinates from video</h1>
+<p>I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid a resizable red box which could be dragged during video play. The coordinates of the box are output multiple times per second and will be used to train a model. </p>
+<p><img alt="Web Label Gatherer" src="images/web_label_gatherer.png"></p>
+<p>It is tricky to keep the box correctly aligned around the moving dancer even at lower playback speed, but I will go with what I have for now and come back to do this more accurately if that proves to be useful. </p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
@@ -69,20 +60,20 @@
 
                 <li><article class="hentry">
                     <header>
-                        <h1><a href="/a-new-draft-script-for-pelican.html" rel="bookmark"
-                               title="Permalink to A new draft script for Pelican">A new draft script for Pelican</a></h1>
+                        <h1><a href="/annotating-video-of-an-irish-dancer.html" rel="bookmark"
+                               title="Permalink to Annotating video of an Irish Dancer">Annotating video of an Irish Dancer</a></h1>
                     </header>
 
                     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2025-05-09T00:00:00+02:00">
-                Published: Fri 09 May 2025
+        <abbr class="published" title="2025-12-05T00:00:00+01:00">
+                Published: Fri 05 December 2025
         </abbr>
 
                 <address class="vcard author">
                         By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="/category/software.html">Software</a>.</p>
+        <p>In <a href="/category/image-processing.html">Image Processing</a>.</p>
         
 </footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -94,27 +85,28 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<p>To make it easier to draft a blog entry for Pelican I got chat gpt to create a bash <a href="https://github.com/anthonynolan/blog/blob/master/create_draft.sh">script</a> for me. It is very simple, but with a few minor mods it does …</p>
-                        <a class="readmore" href="/a-new-draft-script-for-pelican.html">read more</a>
+<h1>Idea</h1>
+<p>I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she …</p>
+                        <a class="readmore" href="/annotating-video-of-an-irish-dancer.html">read more</a>
                     </div><!-- /.entry-content -->
                 </article></li>
 
                 <li><article class="hentry">
                     <header>
-                        <h1><a href="/most-common-spanish-words-to-anki.html" rel="bookmark"
-                               title="Permalink to Most Common Spanish words to Anki">Most Common Spanish words to Anki</a></h1>
+                        <h1><a href="/examining-an-image-watermark.html" rel="bookmark"
+                               title="Permalink to Examining an image watermark">Examining an image watermark</a></h1>
                     </header>
 
                     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2025-02-23T14:50:00+01:00">
-                Published: Sun 23 February 2025
+        <abbr class="published" title="2025-12-05T00:00:00+01:00">
+                Published: Fri 05 December 2025
         </abbr>
 
                 <address class="vcard author">
                         By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="/category/software.html">Software</a>.</p>
+        <p>In <a href="/category/image-processing.html">Image processing</a>.</p>
         
 </footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -126,46 +118,9 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<h1>Get the most common words from Spanish</h1>
-<p>Results will depend on the corpus used. I am not interested in accuracy, so just got a Spanish corpus from nltk. </p>
-<ul>
-<li>figured out which words were junk …</li></ul>
-                        <a class="readmore" href="/most-common-spanish-words-to-anki.html">read more</a>
-                    </div><!-- /.entry-content -->
-                </article></li>
-
-                <li><article class="hentry">
-                    <header>
-                        <h1><a href="/learning-python.html" rel="bookmark"
-                               title="Permalink to Learning Python">Learning Python</a></h1>
-                    </header>
-
-                    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2024-11-16T14:50:00+01:00">
-                Published: Sat 16 November 2024
-        </abbr>
-
-                <address class="vcard author">
-                        By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
-                </address>
-        <p>In <a href="/category/software.html">Software</a>.</p>
-        
-</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FYDC27JYB4');
-</script>
-
-<h1>Not the <em>Hello World!</em> version</h1>
-<p>A list of resources and practices to get python beyond the basics</p>
-<h2>The book</h2>
-<p>I am using <a href="https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/">Fluent Python</a> by Luciano Romalho as the starting point. I bought this …</p>
-                        <a class="readmore" href="/learning-python.html">read more</a>
+<h1>Idea</h1>
+<p>I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just …</p>
+                        <a class="readmore" href="/examining-an-image-watermark.html">read more</a>
                     </div><!-- /.entry-content -->
                 </article></li>
                     </ol><!-- /#posts-list -->

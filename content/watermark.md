@@ -1,5 +1,5 @@
 Title: Examining an image watermark
-Category: 
+Category: Image processing
 Date: 2025-12-05
 Author: Anthony
 

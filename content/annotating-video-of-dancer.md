@@ -1,5 +1,5 @@
 Title: Annotating video of an Irish Dancer
-Category: 
+Category: Image Processing
 Date: 2025-12-05
 Author: Anthony
 

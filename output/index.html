@@ -15,7 +15,7 @@
                                                 <li><a href="/category/books.html">Books</a></li>
                                                 <li><a href="/category/cooking.html">Cooking</a></li>
                                                 <li><a href="/category/health.html">Health</a></li>
-                                                <li><a href="/category/misc.html">misc</a></li>
+                                                <li><a href="/category/image-processing.html">Image processing</a></li>
                                                 <li><a href="/category/notes.html">Notes</a></li>
                                                 <li><a href="/category/physics.html">Physics</a></li>
                                                 <li><a href="/category/self-improvement.html">Self improvement</a></li>
@@ -27,16 +27,16 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="/annotating-video-of-an-irish-dancer.html">Annotating video of an Irish Dancer</a></h1>
+                        <h1 class="entry-title"><a href="/video-annotation-in-a-browser.html">Video annotation in a browser</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2025-12-05T00:00:00+01:00">
-                Published: Fri 05 December 2025
+        <abbr class="published" title="2025-12-06T00:00:00+01:00">
+                Published: Sat 06 December 2025
         </abbr>
 
                 <address class="vcard author">
                         By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="/category/misc.html">misc</a>.</p>
+        <p>In <a href="/category/image-processing.html">Image processing</a>.</p>
         
 </footer><!-- /.post-info --><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -48,20 +48,48 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<h1>Idea</h1>
-<p>I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she can be seen more clearly. </p>
-<p>I did something like this for a project I did recently to track a dumbbell in an image. I took the approach of playing the video in a browser and showing an overlay of a red bounding box. The box was movable as the video played and the coordinates of the box were written to the console as the video played and the box moved. </p>
-<p>This approach gave quite a jerky movement of the box. This may have been something related to how the playback worked in the browser, or more likely how the coordinates were written to the console. I an effort to do better on an idea like this I wanted to try some automatic annotation tools.</p>
-<h1>CVAT</h1>
-<p>This is an opersource fairly high end tool for annotating video. I uploaded my video and manually created a bounding box. The process of interpolating this or tracking with AI is not straightforward. I can either learn more about this approach - which may pay dividends in the future for other projects - or can revert to the browser method and see if I can improve that. </p>
-<p>The dancer does not move in a nice linear fashion like the pool balls in the videos from CVAT on youtube, but interpolation may be the best way to go. Quite a steep learning curve for these tools but that is to be expected. Labeling video is not an easy task and there are a lot of options.</p>
-<h1>References</h1>
-<p>CVAT is at http://cvat.ai</p>                    </article>
+<h1>Collecting dancer coordinates from video</h1>
+<p>I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid a resizable red box which could be dragged during video play. The coordinates of the box are output multiple times per second and will be used to train a model. </p>
+<p><img alt="Web Label Gatherer" src="images/web_label_gatherer.png"></p>
+<p>It is tricky to keep the box correctly aligned around the moving dancer even at lower playback speed, but I will go with what I have for now and come back to do this more accurately if that proves to be useful. </p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
                         <hr />
                         <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="/annotating-video-of-an-irish-dancer.html" rel="bookmark"
+                               title="Permalink to Annotating video of an Irish Dancer">Annotating video of an Irish Dancer</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-12-05T00:00:00+01:00">
+                Published: Fri 05 December 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="/category/image-processing.html">Image Processing</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<h1>Idea</h1>
+<p>I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she …</p>
+                        <a class="readmore" href="/annotating-video-of-an-irish-dancer.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>
@@ -78,7 +106,7 @@
                 <address class="vcard author">
                         By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="/category/misc.html">misc</a>.</p>
+        <p>In <a href="/category/image-processing.html">Image processing</a>.</p>
         
 </footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
