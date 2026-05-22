@@ -7,6 +7,8 @@ if [ -z "$COMMIT_MESSAGE" ]; then
   COMMIT_MESSAGE=$(date '+%Y-%m-%d %H:%M:%S %z')
 fi
 
+make publish
+
 git add .
 if git diff --cached --quiet; then
   echo "No changes to commit."
