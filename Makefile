@@ -1,7 +1,7 @@
 PY?=
 PELICAN?=./.venv/bin/pelican
 PELICANOPTS=
-PELICAN_THEME?=notmyidea
+PELICAN_THEME?=themes/cathal-modern
 
 PELICANOPTS += -t "$(PELICAN_THEME)"
 

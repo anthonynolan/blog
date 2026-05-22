@@ -14,10 +14,6 @@ Author: Anthony
 </script>
 
 
-I have exported an anki deck and want you to review it. It is in the filtered deck file. I want you to see if there
-  are improvements that can be made to these cards. For example adding examples, finding links between them and if
-  there are other areas that I should study which represent gaps in my knowledge of the topic covered in these cards.
-
 # Enhancing an anki deck
 
 I have about 1000 anki cards on a range of subjects. Some of the cards are of poor quality - too long, not specific enough for example. And there are just gaps. If I have a set of cards on an aspect of world history and there are important parts missing, then I would like to correct that. I decided to use Codex to do this. 
