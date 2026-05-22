@@ -27,10 +27,10 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="/video-annotation-in-a-browser.html">Video annotation in a browser</a></h1>
+                        <h1 class="entry-title"><a href="/image-annotation-with-mediapipe.html">Image annotation with Mediapipe</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2025-12-06T00:00:00+01:00">
-                Published: Sat 06 December 2025
+        <abbr class="published" title="2025-12-07T00:00:00+01:00">
+                Published: Sun 07 December 2025
         </abbr>
 
                 <address class="vcard author">
@@ -48,20 +48,54 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<h1>Collecting dancer coordinates from video</h1>
-<p>I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid a resizable red box which could be dragged during video play. The coordinates of the box are output multiple times per second and will be used to train a model. </p>
-<p>This is a still from the collection process. </p>
-<p><img alt="Web Label Gatherer" src="images/web_label_gatherer.png"></p>
-<p>It is tricky to keep the box correctly aligned around the moving dancer even at lower playback speed, but I will go with what I have for now and come back to do this more accurately if that proves to be useful. </p>
-<p>This is the prompt I used with Codex to get the first revision of the web page. I added a couple of refinements after this to allow slowmo, data copying and replay of the labels.</p>
-<blockquote>
-<p>I want to view a video on a simple web page. the video is in this folder. Show the video in a large size. Overlay a red box that I can drag around the screen while the video is playing. As the video plays output the coordinates of the top left hand corner of the box along with the width and height. The width and height of the box should be adjustable. The video should be pausable. I am doing this to collect training data to build a machine learning model to track the dancer on the stage.</p>
-</blockquote>                    </article>
+<h1>Mediapipe</h1>
+<p>This library from Google can be used to add landmarks to images of people. There are examples of the different things that it can do <a href="https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples/object_detection/python">here</a>. </p>
+<p>This is the example from the demo colab</p>
+<p><img alt="Posemodel Girl" src="images/posemodel-girl.png"></p>
+<p>There are 2 things that I might want to do with this:</p>
+<ul>
+<li>I am going to try to use this to process my Irish Dancer pictures to find the dancer in them. This is an alternative to labeling in the browser. </li>
+<li>Write some software to 'observe' me doing bodyweight exercises. Things like determining if my shoulders are level during pushups. </li>
+</ul>
+<p>Before I settled on mediapipe I took a look at some other posemodels. <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose?tab=readme-ov-file">This model</a> from CMU was a bit cumbersome to run on wsl. I don't want to have to compile any C++ on wsl as there is a good chance that it will not work. </p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
                         <hr />
                         <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="/video-annotation-in-a-browser.html" rel="bookmark"
+                               title="Permalink to Video annotation in a browser">Video annotation in a browser</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-12-06T00:00:00+01:00">
+                Published: Sat 06 December 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="/category/image-processing.html">Image processing</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<h1>Collecting dancer coordinates from video</h1>
+<p>I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid …</p>
+                        <a class="readmore" href="/video-annotation-in-a-browser.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>

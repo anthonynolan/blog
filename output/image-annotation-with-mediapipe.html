@@ -4,8 +4,9 @@
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta name="generator" content="Pelican" />
-                        <title>Cathal and Dad - Authors</title>
+                        <title>Image annotation with Mediapipe</title>
                         <link rel="stylesheet" href="/theme/css/main.css" />
+    <meta name="description" content="window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FYDC27JYB4');..." />
         </head>
 
         <body id="index" class="home">
@@ -15,7 +16,7 @@
                                                 <li><a href="/category/books.html">Books</a></li>
                                                 <li><a href="/category/cooking.html">Cooking</a></li>
                                                 <li><a href="/category/health.html">Health</a></li>
-                                                <li><a href="/category/image-processing.html">Image processing</a></li>
+                                                <li class="active"><a href="/category/image-processing.html">Image processing</a></li>
                                                 <li><a href="/category/notes.html">Notes</a></li>
                                                 <li><a href="/category/physics.html">Physics</a></li>
                                                 <li><a href="/category/self-improvement.html">Self improvement</a></li>
@@ -24,16 +25,49 @@
                                                 <li><a href="/category/things-to-do-with-kids.html">Things to do with kids</a></li>
                         </ul></nav>
                 </header><!-- /#banner -->
+  <section id="content" class="body">
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/image-annotation-with-mediapipe.html" rel="bookmark"
+             title="Permalink to Image annotation with Mediapipe">Image annotation with Mediapipe</a></h1>
+      </header>
 
-    <section id="content" class="body">
-        <h1>Authors on Cathal and Dad</h1>
-        <ul>
-                <li><a href="/author/anthony.html">Anthony</a> (18)</li>
-                <li><a href="/author/anthony-and-cathal.html">Anthony and Cathal</a> (2)</li>
-                <li><a href="/author/anthony-nolan.html">Anthony Nolan</a> (2)</li>
-        </ul>
-    </section>
+      <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-12-07T00:00:00+01:00">
+                Published: Sun 07 December 2025
+        </abbr>
 
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="/category/image-processing.html">Image processing</a>.</p>
+        
+</footer><!-- /.post-info -->        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<h1>Mediapipe</h1>
+<p>This library from Google can be used to add landmarks to images of people. There are examples of the different things that it can do <a href="https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples/object_detection/python">here</a>. </p>
+<p>This is the example from the demo colab</p>
+<p><img alt="Posemodel Girl" src="images/posemodel-girl.png"></p>
+<p>There are 2 things that I might want to do with this:</p>
+<ul>
+<li>I am going to try to use this to process my Irish Dancer pictures to find the dancer in them. This is an alternative to labeling in the browser. </li>
+<li>Write some software to 'observe' me doing bodyweight exercises. Things like determining if my shoulders are level during pushups. </li>
+</ul>
+<p>Before I settled on mediapipe I took a look at some other posemodels. <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose?tab=readme-ov-file">This model</a> from CMU was a bit cumbersome to run on wsl. I don't want to have to compile any C++ on wsl as there is a good chance that it will not work. </p>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
                 <section id="extras" class="body">
                                 <div class="blogroll">
                                         <h2>links</h2>
