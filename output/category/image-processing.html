@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <title>Cathal and Dad - Image processing category</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+        <head>
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta name="generator" content="Pelican" />
+                        <title>Cathal and Dad - Image processing</title>
+                        <link rel="stylesheet" href="https://blog.cathalanddad.com/theme/css/main.css" />
+                                <link href="https://blog.cathalanddad.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cathal and Dad Atom Feed" />
+        </head>
 
-<body>
-        <header>
-              <hgroup><h1><a href="/">Cathal and Dad</a></h1></hgroup>
-        <nav><ul>
-            <li><a href="/category/books.html" >Books</a></li>
-            <li><a href="/category/cooking.html" >Cooking</a></li>
-            <li><a href="/category/health.html" >Health</a></li>
-            <li><a href="/category/image-processing.html"  aria-current="page" >Image processing</a></li>
-            <li><a href="/category/knowledge-engineering.html" >Knowledge Engineering</a></li>
-            <li><a href="/category/notes.html" >Notes</a></li>
-            <li><a href="/category/physics.html" >Physics</a></li>
-            <li><a href="/category/self-improvement.html" >Self improvement</a></li>
-            <li><a href="/category/software.html" >Software</a></li>
-            <li><a href="/category/spanish.html" >Spanish</a></li>
-            <li><a href="/category/things-to-do-with-kids.html" >Things to do with kids</a></li>
-        </ul></nav>
-        </header>
-        <main>
-<h2>Articles in the Image processing category</h2>
+        <body id="index" class="home">
+                <header id="banner" class="body">
+                        <h1><a href="https://blog.cathalanddad.com/">Cathal and Dad</a></h1>
+                        <nav><ul>
+                                                <li><a href="https://blog.cathalanddad.com/category/books.html">Books</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/cooking.html">Cooking</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/health.html">Health</a></li>
+                                                <li class="active"><a href="https://blog.cathalanddad.com/category/image-processing.html">Image processing</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/knowledge-engineering.html">Knowledge Engineering</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/notes.html">Notes</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/physics.html">Physics</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/self-improvement.html">Self improvement</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/software.html">Software</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/spanish.html">Spanish</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/things-to-do-with-kids.html">Things to do with kids</a></li>
+                        </ul></nav>
+                </header><!-- /#banner -->
 
+                <aside id="featured" class="body">
+                    <article>
+                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/image-annotation-with-mediapipe.html">Image annotation with Mediapipe</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2025-12-07T00:00:00+01:00">
+                Published: Sun 07 December 2025
+        </abbr>
 
-        <article>
-                <header> <h2><a href="/image-annotation-with-mediapipe.html" rel="bookmark" title="Permalink to Image annotation with Mediapipe">Image annotation with Mediapipe</a></h2> </header>
-                <section><!-- Google tag (gtag.js) -->
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="https://blog.cathalanddad.com/category/image-processing.html">Image processing</a>.</p>
+        
+</footer><!-- /.post-info --><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -42,17 +52,38 @@
 
 <h1>Mediapipe</h1>
 <p>This library from Google can be used to add landmarks to images of people. There are examples of the different things that it can do <a href="https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples/object_detection/python">here</a>. </p>
-<p>This is the example from the demo …</p></section>
-                <footer>
-                    <p>Published: <time datetime="2025-12-07T00:00:00+01:00"> Sun 07 December 2025 </time></p>
-                    <address>By
-                        <a href="/author/anthony.html">Anthony</a>
-                    </address>
-                </footer>
-        </article>
-        <article>
-                <header> <h2><a href="/video-annotation-in-a-browser.html" rel="bookmark" title="Permalink to Video annotation in a browser">Video annotation in a browser</a></h2> </header>
-                <section><!-- Google tag (gtag.js) -->
+<p>This is the example from the demo colab</p>
+<p><img alt="Posemodel Girl" src="images/posemodel-girl.png"></p>
+<p>There are 2 things that I might want to do with this:</p>
+<ul>
+<li>I am going to try to use this to process my Irish Dancer pictures to find the dancer in them. This is an alternative to labeling in the browser. </li>
+<li>Write some software to 'observe' me doing bodyweight exercises. Things like determining if my shoulders are level during pushups. </li>
+</ul>
+<p>Before I settled on mediapipe I took a look at some other posemodels. <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose?tab=readme-ov-file">This model</a> from CMU was a bit cumbersome to run on wsl. I don't want to have to compile any C++ on wsl as there is a good chance that it will not work. </p>                    </article>
+                </aside><!-- /#featured -->
+                    <section id="content" class="body">
+                        <h1>Other articles</h1>
+                        <hr />
+                        <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/video-annotation-in-a-browser.html" rel="bookmark"
+                               title="Permalink to Video annotation in a browser">Video annotation in a browser</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-12-06T00:00:00+01:00">
+                Published: Sat 06 December 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="https://blog.cathalanddad.com/category/image-processing.html">Image processing</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -63,64 +94,106 @@
 </script>
 
 <h1>Collecting dancer coordinates from video</h1>
-<p>I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid …</p></section>
-                <footer>
-                    <p>Published: <time datetime="2025-12-06T00:00:00+01:00"> Sat 06 December 2025 </time></p>
-                    <address>By
-                        <a href="/author/anthony.html">Anthony</a>
-                    </address>
-                </footer>
-        </article>
-        <article>
-                <header> <h2><a href="/annotating-video-of-an-irish-dancer.html" rel="bookmark" title="Permalink to Annotating video of an Irish Dancer">Annotating video of an Irish Dancer</a></h2> </header>
-                <section><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<p>I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/video-annotation-in-a-browser.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
-  gtag('config', 'G-FYDC27JYB4');
-</script>
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/annotating-video-of-an-irish-dancer.html" rel="bookmark"
+                               title="Permalink to Annotating video of an Irish Dancer">Annotating video of an Irish Dancer</a></h1>
+                    </header>
 
-<h1>Idea</h1>
-<p>I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she …</p></section>
-                <footer>
-                    <p>Published: <time datetime="2025-12-05T00:00:00+01:00"> Fri 05 December 2025 </time></p>
-                    <address>By
-                        <a href="/author/anthony.html">Anthony</a>
-                    </address>
-                </footer>
-        </article>
-        <article>
-                <header> <h2><a href="/examining-an-image-watermark.html" rel="bookmark" title="Permalink to Examining an image watermark">Examining an image watermark</a></h2> </header>
-                <section><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-12-05T00:00:00+01:00">
+                Published: Fri 05 December 2025
+        </abbr>
 
-  gtag('config', 'G-FYDC27JYB4');
-</script>
-
-<h1>Idea</h1>
-<p>I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just …</p></section>
-                <footer>
-                    <p>Published: <time datetime="2025-12-05T00:00:00+01:00"> Fri 05 December 2025 </time></p>
-                    <address>By
-                        <a href="/author/anthony.html">Anthony</a>
-                    </address>
-                </footer>
-        </article>
-
-
-        </main>
-        <footer>
-                <address>
-                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
                 </address>
-        </footer>
-</body>
+        <p>In <a href="https://blog.cathalanddad.com/category/image-processing.html">Image Processing</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<h1>Idea</h1>
+<p>I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/annotating-video-of-an-irish-dancer.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/examining-an-image-watermark.html" rel="bookmark"
+                               title="Permalink to Examining an image watermark">Examining an image watermark</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-12-05T00:00:00+01:00">
+                Published: Fri 05 December 2025
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="https://blog.cathalanddad.com/category/image-processing.html">Image processing</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<h1>Idea</h1>
+<p>I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/examining-an-image-watermark.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
+                    </ol><!-- /#posts-list -->
+                    </section><!-- /#content -->
+                <section id="extras" class="body">
+                                <div class="blogroll">
+                                        <h2>links</h2>
+                                        <ul>
+                                                        <li><a href="https://getpelican.com/">Pelican</a></li>
+                                                        <li><a href="https://www.python.org/">Python.org</a></li>
+                                                        <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                                                        <li><a href="#">You can modify those links in your config file</a></li>
+                                        </ul>
+                                </div><!-- /.blogroll -->
+                                <div class="social">
+                                        <h2>social</h2>
+                                        <ul>
+                                                        <li><a href="https://blog.cathalanddad.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                                                        <li><a href="#">You can add links in your config file</a></li>
+                                                        <li><a href="#">Another social link</a></li>
+                                        </ul>
+                                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+                <footer id="contentinfo" class="body">
+                        <address id="about" class="vcard body">
+                                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                        </address><!-- /#about -->
+
+                        <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                </footer><!-- /#contentinfo -->
+
+        </body>
 </html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad - Image processing</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/image-processing.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2025-12-07T00:00:00+01:00</updated><entry><title>Image annotation with Mediapipe</title><link href="https://blog.cathalanddad.com/image-annotation-with-mediapipe.html" rel="alternate"></link><published>2025-12-07T00:00:00+01:00</published><updated>2025-12-07T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-07:/image-annotation-with-mediapipe.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Mediapipe&lt;/h1&gt;
+&lt;p&gt;This library from Google can be used to add landmarks to images of people. There are examples of the different things that it can do &lt;a href="https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples/object_detection/python"&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This is the example from the demo …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Mediapipe&lt;/h1&gt;
+&lt;p&gt;This library from Google can be used to add landmarks to images of people. There are examples of the different things that it can do &lt;a href="https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples/object_detection/python"&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This is the example from the demo colab&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Posemodel Girl" src="images/posemodel-girl.png"&gt;&lt;/p&gt;
+&lt;p&gt;There are 2 things that I might want to do with this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I am going to try to use this to process my Irish Dancer pictures to find the dancer in them. This is an alternative to labeling in the browser. &lt;/li&gt;
+&lt;li&gt;Write some software to 'observe' me doing bodyweight exercises. Things like determining if my shoulders are level during pushups. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before I settled on mediapipe I took a look at some other posemodels. &lt;a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose?tab=readme-ov-file"&gt;This model&lt;/a&gt; from CMU was a bit cumbersome to run on wsl. I don't want to have to compile any C++ on wsl as there is a good chance that it will not work. &lt;/p&gt;</content><category term="Image processing"></category></entry><entry><title>Video annotation in a browser</title><link href="https://blog.cathalanddad.com/video-annotation-in-a-browser.html" rel="alternate"></link><published>2025-12-06T00:00:00+01:00</published><updated>2025-12-06T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-06:/video-annotation-in-a-browser.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Collecting dancer coordinates from video&lt;/h1&gt;
+&lt;p&gt;I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Collecting dancer coordinates from video&lt;/h1&gt;
+&lt;p&gt;I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid a resizable red box which could be dragged during video play. The coordinates of the box are output multiple times per second and will be used to train a model. &lt;/p&gt;
+&lt;p&gt;This is a still from the collection process. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Web Label Gatherer" src="images/web_label_gatherer.png"&gt;&lt;/p&gt;
+&lt;p&gt;It is tricky to keep the box correctly aligned around the moving dancer even at lower playback speed, but I will go with what I have for now and come back to do this more accurately if that proves to be useful. &lt;/p&gt;
+&lt;p&gt;This is the prompt I used with Codex to get the first revision of the web page. I added a couple of refinements after this to allow slowmo, data copying and replay of the labels.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I want to view a video on a simple web page. the video is in this folder. Show the video in a large size. Overlay a red box that I can drag around the screen while the video is playing. As the video plays output the coordinates of the top left hand corner of the box along with the width and height. The width and height of the box should be adjustable. The video should be pausable. I am doing this to collect training data to build a machine learning model to track the dancer on the stage.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Image processing"></category></entry><entry><title>Annotating video of an Irish Dancer</title><link href="https://blog.cathalanddad.com/annotating-video-of-an-irish-dancer.html" rel="alternate"></link><published>2025-12-05T00:00:00+01:00</published><updated>2025-12-05T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-05:/annotating-video-of-an-irish-dancer.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she can be seen more clearly. &lt;/p&gt;
+&lt;p&gt;I did something like this for a project I did recently to track a dumbbell in an image. I took the approach of playing the video in a browser and showing an overlay of a red bounding box. The box was movable as the video played and the coordinates of the box were written to the console as the video played and the box moved. &lt;/p&gt;
+&lt;p&gt;This approach gave quite a jerky movement of the box. This may have been something related to how the playback worked in the browser, or more likely how the coordinates were written to the console. I an effort to do better on an idea like this I wanted to try some automatic annotation tools.&lt;/p&gt;
+&lt;h1&gt;CVAT&lt;/h1&gt;
+&lt;p&gt;This is an opersource fairly high end tool for annotating video. I uploaded my video and manually created a bounding box. The process of interpolating this or tracking with AI is not straightforward. I can either learn more about this approach - which may pay dividends in the future for other projects - or can revert to the browser method and see if I can improve that. &lt;/p&gt;
+&lt;p&gt;The dancer does not move in a nice linear fashion like the pool balls in the videos from CVAT on youtube, but interpolation may be the best way to go. Quite a steep learning curve for these tools but that is to be expected. Labeling video is not an easy task and there are a lot of options.&lt;/p&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;p&gt;CVAT is at http://cvat.ai&lt;/p&gt;</content><category term="Image Processing"></category></entry><entry><title>Examining an image watermark</title><link href="https://blog.cathalanddad.com/examining-an-image-watermark.html" rel="alternate"></link><published>2025-12-05T00:00:00+01:00</published><updated>2025-12-05T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-05:/examining-an-image-watermark.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just something interesting to try.&lt;/p&gt;
+&lt;p&gt;I have a jupyter notebook which takes the image and turns it into grayscale with Open CV. The grayscale is a single array with the dims of the original image. I can display that with jupyter. &lt;/p&gt;
+&lt;p&gt;I manually identified a part of the image with a good clear piece of water mark in it. So I created a smaller patch array of just this area. My notebook then draws a vertical line on this patch and plots the values of the pixels along this line as a normal timeseries plot. Animating this process for all of the slices of image gives a nice animated plot of the intensity of the pixels along that line. &lt;/p&gt;
+&lt;p&gt;The image here shows a single example. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="images/image_slice.png"&gt;&lt;/p&gt;
+&lt;p&gt;The intensity plot on the left shows 2 nice high peaks for the intersections of the watermark. Next up I am going to see if I can automatically find these pixels in the image.&lt;/p&gt;</content><category term="Image processing"></category></entry></feed>

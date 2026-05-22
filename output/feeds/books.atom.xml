@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad - Books</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/books.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2025-04-04T12:44:00+02:00</updated><entry><title>Hyperefficient</title><link href="https://blog.cathalanddad.com/hyperefficient.html" rel="alternate"></link><published>2025-04-04T12:44:00+02:00</published><updated>2025-04-04T12:44:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-04-04:/hyperefficient.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Hyperefficient&lt;/h2&gt;
+&lt;p&gt;I am going to try some small experiments based on reading this book.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/hyperefficient/20250404_122330.jpg" alt="Cover" width="400"/&gt;&lt;/p&gt;
+&lt;p&gt;The first one will be based on the idea of structuring a work session. I am going to try this …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Hyperefficient&lt;/h2&gt;
+&lt;p&gt;I am going to try some small experiments based on reading this book.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/hyperefficient/20250404_122330.jpg" alt="Cover" width="400"/&gt;&lt;/p&gt;
+&lt;p&gt;The first one will be based on the idea of structuring a work session. I am going to try this and see if it works better than the Pomodoro method. I often find Pomodoro hard to stick with if I am working on something boring and interrupting if I am doing something better. The 90 minute length of these sessions should help.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/hyperefficient/20250404_122529.jpg" alt="Cover" width="400"/&gt;&lt;/p&gt;
+&lt;h2&gt;Experiment detail&lt;/h2&gt;
+&lt;p&gt;Try 2 of these 90 minute sessions this afternoon. Note how they go and decide whether or not to continue with this.&lt;/p&gt;</content><category term="Books"></category></entry></feed>

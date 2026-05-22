@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad - Physics</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/physics.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2025-04-06T00:00:00+02:00</updated><entry><title>Gravity sim with pygame showing path travelled</title><link href="https://blog.cathalanddad.com/gravity-sim-with-pygame-showing-path-travelled.html" rel="alternate"></link><published>2025-04-06T00:00:00+02:00</published><updated>2025-04-06T00:00:00+02:00</updated><author><name>Anthony and Cathal</name></author><id>tag:blog.cathalanddad.com,2025-04-06:/gravity-sim-with-pygame-showing-path-travelled.html</id><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;Short video showing the trails left by the object under gravity. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/blg1XQLY1C8"&gt;video&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/anthonynolan/physics"&gt;code here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The numbers used are not realistic for a gravity simulation and are modified to make the sim responsive. &lt;/p&gt;</content><category term="Physics"></category></entry><entry><title>learning about pygame</title><link href="https://blog.cathalanddad.com/learning-about-pygame.html" rel="alternate"></link><published>2025-04-05T16:22:00+02:00</published><updated>2025-04-05T16:22:00+02:00</updated><author><name>Anthony and Cathal</name></author><id>tag:blog.cathalanddad.com,2025-04-05:/learning-about-pygame.html</id><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;Today I learned about pygame with my dad. We are working on our physics simulator, it simulates gravitational pull. We are planning on adding vectors and another mass.&lt;/p&gt;</content><category term="Physics"></category></entry><entry><title>Physics Simulation with pygame</title><link href="https://blog.cathalanddad.com/physics-simulation-with-pygame.html" rel="alternate"></link><published>2025-04-04T19:15:00+02:00</published><updated>2025-04-04T19:15:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-04-04:/physics-simulation-with-pygame.html</id><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="https://blog.cathalanddad.com/video/video.mp4" type="video/mp4"&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;</content><category term="Physics"></category></entry></feed>

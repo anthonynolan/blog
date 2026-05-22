@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-05-22T00:00:00+02:00</updated><entry><title>Using Codex to enhance an anki deck</title><link href="https://blog.cathalanddad.com/using-codex-to-enhance-an-anki-deck.html" rel="alternate"></link><published>2026-05-22T00:00:00+02:00</published><updated>2026-05-22T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-05-22:/using-codex-to-enhance-an-anki-deck.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have exported an anki deck and want you to review it. It is in the filtered deck file. I want you to see if there
+  are improvements that can be made to these …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have exported an anki deck and want you to review it. It is in the filtered deck file. I want you to see if there
+  are improvements that can be made to these cards. For example adding examples, finding links between them and if
+  there are other areas that I should study which represent gaps in my knowledge of the topic covered in these cards.&lt;/p&gt;
+&lt;h1&gt;Enhancing an anki deck&lt;/h1&gt;
+&lt;p&gt;I have about 1000 anki cards on a range of subjects. Some of the cards are of poor quality - too long, not specific enough for example. And there are just gaps. If I have a set of cards on an aspect of world history and there are important parts missing, then I would like to correct that. I decided to use Codex to do this. &lt;/p&gt;
+&lt;p&gt;The process was export a subset of my notes, ask codex to suggest improvements, get the improvements made with suitable tagging so that I can track what was done. Reimport. &lt;/p&gt;
+&lt;h2&gt;Export a subset&lt;/h2&gt;
+&lt;p&gt;I started with a set of 10 cards about the book Livewired by David Eagleman. This was an excellent book full of interesting examples and the science behind them. The cards had ended up really being the examples though and as time went on I was finding them to be somewhat isolated. So these were a good candidate for the first round of Codex based improvement. &lt;/p&gt;
+&lt;p&gt;In Anki choose Export Notes in Plain text. Make sure you include the guids in your export. I included all the options - there are only about 5. These guids will allow modified cards to replace their originals and maintain things like study schedules. &lt;/p&gt;
+&lt;h2&gt;Show them to codex&lt;/h2&gt;
+&lt;p&gt;Here is my first prompt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;have&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;exported&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;an&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;anki&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;deck&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;want&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;review&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;It&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;filtered&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;deck&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;want&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;see&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;there&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;are&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;improvements&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;can&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;made&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;these&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cards&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;adding&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;examples&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;finding&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;between&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;them&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;there&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;are&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;other&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;areas&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;should&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;study&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;which&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;represent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gaps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;knowledge&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;covered&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;these&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cards&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;The results&lt;/h2&gt;
+&lt;p&gt;Codex responded with a set of high value fixes including splitting some cards. It also gave me a bullet pointed list of things I should study next based on the gaps in the cars. This is really helpful. I got codex to write this to a text file which I will append to as I repeat and enhance this process for further subsets of my collection. &lt;/p&gt;
+&lt;p&gt;References were provided for all of the card changes made. &lt;/p&gt;
+&lt;p&gt;26 new cards created (from 10 originals)&lt;/p&gt;
+&lt;h2&gt;Thoughts&lt;/h2&gt;
+&lt;p&gt;These cards were based on a book I had read. Before I can really create cards for the gaps I need to read or study somethign about these topics. Having said that many of the new 'split cards' that codex created contain information that is new to me. They are short and to the point and because they are strongly linked to knowledge that I already have I am able to learn and integrate this new knowledge without problem. I just need to watch out for cases where I am adding cards and not really understanding what lies behind them. &lt;/p&gt;
+&lt;p&gt;Given the jump in card count for just this small subset this method could quickly become overwhelming. I need to limit the amount of time I spend on anki overall. Hopefully these changes will improve the value I am getting from this time. &lt;/p&gt;</content><category term="Knowledge Engineering"></category></entry><entry><title>Image annotation with Mediapipe</title><link href="https://blog.cathalanddad.com/image-annotation-with-mediapipe.html" rel="alternate"></link><published>2025-12-07T00:00:00+01:00</published><updated>2025-12-07T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-07:/image-annotation-with-mediapipe.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Mediapipe&lt;/h1&gt;
+&lt;p&gt;This library from Google can be used to add landmarks to images of people. There are examples of the different things that it can do &lt;a href="https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples/object_detection/python"&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This is the example from the demo …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Mediapipe&lt;/h1&gt;
+&lt;p&gt;This library from Google can be used to add landmarks to images of people. There are examples of the different things that it can do &lt;a href="https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples/object_detection/python"&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This is the example from the demo colab&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Posemodel Girl" src="images/posemodel-girl.png"&gt;&lt;/p&gt;
+&lt;p&gt;There are 2 things that I might want to do with this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I am going to try to use this to process my Irish Dancer pictures to find the dancer in them. This is an alternative to labeling in the browser. &lt;/li&gt;
+&lt;li&gt;Write some software to 'observe' me doing bodyweight exercises. Things like determining if my shoulders are level during pushups. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before I settled on mediapipe I took a look at some other posemodels. &lt;a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose?tab=readme-ov-file"&gt;This model&lt;/a&gt; from CMU was a bit cumbersome to run on wsl. I don't want to have to compile any C++ on wsl as there is a good chance that it will not work. &lt;/p&gt;</content><category term="Image processing"></category></entry><entry><title>Video annotation in a browser</title><link href="https://blog.cathalanddad.com/video-annotation-in-a-browser.html" rel="alternate"></link><published>2025-12-06T00:00:00+01:00</published><updated>2025-12-06T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-06:/video-annotation-in-a-browser.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Collecting dancer coordinates from video&lt;/h1&gt;
+&lt;p&gt;I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Collecting dancer coordinates from video&lt;/h1&gt;
+&lt;p&gt;I have used this technique before to track a dumbbell during exercise. I got Open AI Codex to write a web page for me which played the video, overlaid a resizable red box which could be dragged during video play. The coordinates of the box are output multiple times per second and will be used to train a model. &lt;/p&gt;
+&lt;p&gt;This is a still from the collection process. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Web Label Gatherer" src="images/web_label_gatherer.png"&gt;&lt;/p&gt;
+&lt;p&gt;It is tricky to keep the box correctly aligned around the moving dancer even at lower playback speed, but I will go with what I have for now and come back to do this more accurately if that proves to be useful. &lt;/p&gt;
+&lt;p&gt;This is the prompt I used with Codex to get the first revision of the web page. I added a couple of refinements after this to allow slowmo, data copying and replay of the labels.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I want to view a video on a simple web page. the video is in this folder. Show the video in a large size. Overlay a red box that I can drag around the screen while the video is playing. As the video plays output the coordinates of the top left hand corner of the box along with the width and height. The width and height of the box should be adjustable. The video should be pausable. I am doing this to collect training data to build a machine learning model to track the dancer on the stage.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Image processing"></category></entry><entry><title>Annotating video of an Irish Dancer</title><link href="https://blog.cathalanddad.com/annotating-video-of-an-irish-dancer.html" rel="alternate"></link><published>2025-12-05T00:00:00+01:00</published><updated>2025-12-05T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-05:/annotating-video-of-an-irish-dancer.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I have a video of an Irish Dancer taken from a stationary camera. I would like to create a version of this video which is more closely cropped to the dancer so she can be seen more clearly. &lt;/p&gt;
+&lt;p&gt;I did something like this for a project I did recently to track a dumbbell in an image. I took the approach of playing the video in a browser and showing an overlay of a red bounding box. The box was movable as the video played and the coordinates of the box were written to the console as the video played and the box moved. &lt;/p&gt;
+&lt;p&gt;This approach gave quite a jerky movement of the box. This may have been something related to how the playback worked in the browser, or more likely how the coordinates were written to the console. I an effort to do better on an idea like this I wanted to try some automatic annotation tools.&lt;/p&gt;
+&lt;h1&gt;CVAT&lt;/h1&gt;
+&lt;p&gt;This is an opersource fairly high end tool for annotating video. I uploaded my video and manually created a bounding box. The process of interpolating this or tracking with AI is not straightforward. I can either learn more about this approach - which may pay dividends in the future for other projects - or can revert to the browser method and see if I can improve that. &lt;/p&gt;
+&lt;p&gt;The dancer does not move in a nice linear fashion like the pool balls in the videos from CVAT on youtube, but interpolation may be the best way to go. Quite a steep learning curve for these tools but that is to be expected. Labeling video is not an easy task and there are a lot of options.&lt;/p&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;p&gt;CVAT is at http://cvat.ai&lt;/p&gt;</content><category term="Image Processing"></category></entry><entry><title>Examining an image watermark</title><link href="https://blog.cathalanddad.com/examining-an-image-watermark.html" rel="alternate"></link><published>2025-12-05T00:00:00+01:00</published><updated>2025-12-05T00:00:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-12-05:/examining-an-image-watermark.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Idea&lt;/h1&gt;
+&lt;p&gt;I just want to see if I can find a clever way to remove a water mark from an image. I am not trying to repro anything that is protected, this is just something interesting to try.&lt;/p&gt;
+&lt;p&gt;I have a jupyter notebook which takes the image and turns it into grayscale with Open CV. The grayscale is a single array with the dims of the original image. I can display that with jupyter. &lt;/p&gt;
+&lt;p&gt;I manually identified a part of the image with a good clear piece of water mark in it. So I created a smaller patch array of just this area. My notebook then draws a vertical line on this patch and plots the values of the pixels along this line as a normal timeseries plot. Animating this process for all of the slices of image gives a nice animated plot of the intensity of the pixels along that line. &lt;/p&gt;
+&lt;p&gt;The image here shows a single example. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="images/image_slice.png"&gt;&lt;/p&gt;
+&lt;p&gt;The intensity plot on the left shows 2 nice high peaks for the intersections of the watermark. Next up I am going to see if I can automatically find these pixels in the image.&lt;/p&gt;</content><category term="Image processing"></category></entry><entry><title>Changing my Spanish language goal</title><link href="https://blog.cathalanddad.com/changing-my-spanish-language-goal.html" rel="alternate"></link><published>2025-10-12T00:00:00+02:00</published><updated>2025-10-12T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-10-12:/changing-my-spanish-language-goal.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Goal factoring&lt;/h1&gt;
+&lt;p&gt;I have been following the Less Wrong &lt;a href="https://www.lesswrong.com/s/d922gAtBM8JNzkKKJ"&gt;Training Regime&lt;/a&gt; for a few days now. It is very interesting with some useful techniques around becoming more rational in general. Today I read about …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Goal factoring&lt;/h1&gt;
+&lt;p&gt;I have been following the Less Wrong &lt;a href="https://www.lesswrong.com/s/d922gAtBM8JNzkKKJ"&gt;Training Regime&lt;/a&gt; for a few days now. It is very interesting with some useful techniques around becoming more rational in general. Today I read about Goal Factoring. This is where you look at the actions you are taking on some sort of regular basis. Like going to the gym and figure out what goals they contribute to. Stronger joints might be an example here. Also things they detract from: going to the gym takes time. &lt;/p&gt;
+&lt;p&gt;There are a set of steps that you go through to really tidy up your goals and habits. It is a different way of approaching this for me. I often find that goals and habits become stale over time, so weeking out like this is good. &lt;/p&gt;
+&lt;p&gt;To help this process along and get a better understanding I decided to ask chat gpt to help me rafactor my learning Spanish goal. I have been working on this for up to an hour a day for most of this year and feel that my progress has stagnated a bit lately. The full conversation is &lt;a href="https://chatgpt.com/share/68eb8a82-c4d4-8013-93e5-4d5b4e7afd02"&gt;here&lt;/a&gt;. Overall I really like this sort of input/guidance. It is easy to get into a rut with things like learning long lists of vocabulary. It is time consuming and ultimately can be an almost pointless video game of scoring points. Developing habits that you just do automatically is good, but they need to be checked and changed every now and again.&lt;/p&gt;
+&lt;p&gt;I started taking the advice today and really dug into the first paragraph of my Harry Potter book. It is a few months since I read that part and I found it much easier to understand, but there was still plenty to clarify. I have taken notes and will continue at this spot tomorrow. It will be great if this works, because learning spanish has been taking me a long time and I would like to use that time for something else, but not throw away all of the work I have done.&lt;/p&gt;</content><category term="Spanish"></category></entry><entry><title>Spanish learning progress</title><link href="https://blog.cathalanddad.com/spanish-learning-progress.html" rel="alternate"></link><published>2025-10-04T00:00:00+02:00</published><updated>2025-10-04T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-10-04:/spanish-learning-progress.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Five Months Into Learning Spanish&lt;/h1&gt;
+&lt;p&gt;It’s been five months since I set myself the goal of learning Spanish, and overall it’s been going pretty well — though not without a few low points …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Five Months Into Learning Spanish&lt;/h1&gt;
+&lt;p&gt;It’s been five months since I set myself the goal of learning Spanish, and overall it’s been going pretty well — though not without a few low points.  &lt;/p&gt;
+&lt;p&gt;I reached B1 level on Busuu, but I started to feel that the lessons were getting fiddly. I was being introduced to concepts like the subjunctive that felt a bit ahead of where I was. What I really needed was more exposure to the basics before moving on. In the end, I cancelled my subscription. That said, at just €11 per month, it was excellent value for the grammar foundation I built, and I may well return to it later to pick up B2.  &lt;/p&gt;
+&lt;h2&gt;Harry Potter and Anki&lt;/h2&gt;
+&lt;p&gt;After Busuu, I went back to reading &lt;em&gt;Harry Potter y la piedra filosofal&lt;/em&gt;. At first, I could only manage about a page per day because I had to stop and translate almost everything. I’d use ChatGPT to translate the new words and then ask it to give me simple example sentences, which I added to my Anki deck. It wasn’t much fun at the beginning — it felt like a slog — but it has paid off.  &lt;/p&gt;
+&lt;p&gt;Now, I can read a few pages without needing a dictionary, and I’m actually enjoying the story. My Anki deck has grown to over 600 words, with 10–20 new ones added daily. True, much of this vocabulary is wizard- and spell-related, but that’s hardly a bad thing. Once I finish Harry Potter, I’ll move on to broader sources.  &lt;/p&gt;
+&lt;h2&gt;The 1,000-Word Goal&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="Anki Vocabulary" src="images/anki-span-vocab.png"&gt;
+With around 600 words under my belt, I’ve realised that reaching 1,000 will put me in a strong position with a solid set of everyday vocabulary. I have about 60 pages left in Harry Potter, which I should finish by the end of the month. That should bring me close to the 1,000 mark.  &lt;/p&gt;
+&lt;h2&gt;Spanish on Screen&lt;/h2&gt;
+&lt;p&gt;I’ve also started experimenting with Spanish TV. I tried a Spanish drama on Netflix with both Spanish audio and Spanish subtitles, and it was tough — but I understood more than I expected. Watching regular content with Spanish subtitles is another option I want to explore soon.  &lt;/p&gt;
+&lt;h2&gt;Looking Ahead&lt;/h2&gt;
+&lt;p&gt;All in all, I’m happy with my progress. Stepping back now and again helps me appreciate how far I’ve come. My original goal was to get around more easily on holiday in Spain, and I feel I’ve already achieved that. Now I want to aim higher: reading Spanish books, not just children’s ones but eventually adult novels too.  &lt;/p&gt;
+&lt;p&gt;In an ideal world, by the end of this year I’ll have learned enough Spanish to consider the project “complete” — not that I’ll stop, but that I’ll be able to focus on using the language naturally: reading for fun, watching shows, and finding opportunities to speak with native speakers.  &lt;/p&gt;
+&lt;p&gt;Looking back, I’ve gone from struggling with a single page to reading chapters and enjoying Spanish TV. Looking forward, the idea of picking up an adult novel and diving into it in Spanish feels like a challenge I’m ready to take on.  &lt;/p&gt;</content><category term="Spanish"></category></entry><entry><title>First vibecoding mistakes</title><link href="https://blog.cathalanddad.com/first-vibecoding-mistakes.html" rel="alternate"></link><published>2025-05-26T00:00:00+02:00</published><updated>2025-05-26T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-05-26:/first-vibecoding-mistakes.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I started the deeplearning.ai course on vibecoding with Replit today and already I can see some of the mistakes I have been making. Here are some of my takeaways so far.&lt;/p&gt;
+&lt;h2&gt;Pick one …&lt;/h2&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I started the deeplearning.ai course on vibecoding with Replit today and already I can see some of the mistakes I have been making. Here are some of my takeaways so far.&lt;/p&gt;
+&lt;h2&gt;Pick one feature to build at a time and know exactly what you are expecting&lt;/h2&gt;
+&lt;p&gt;I have been using cline for coding and have frequently made the mistake of putting more than one ask in the prompt. The sophistication of llms may give the impression that they could handle this, but in vibecoding at the moment this is a bad idea. Along with making it harder for the llm to do its job it is harder for you to determine that the requested features work.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;So create a branch in git&lt;/li&gt;
+&lt;li&gt;decide what you want and &lt;/li&gt;
+&lt;li&gt;write it out in text. Refine this text until it is very clear. &lt;/li&gt;
+&lt;li&gt;Decide what context the llm needs. I try to keep this as short as possible to avoid confusion, but make sure it has what it needs and it not shooting in the dark. Your context is likely to stick with a few files while you are developing a feature or set of features, but keep an eye on it as you proceed so you are not leaving out something important.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;One feature one session&lt;/h2&gt;
+&lt;p&gt;Once you have what you need - by a combination of vibecoding and fixing things up yourself - check it in and start a new session in your assistant. This should keep things reasonably clean.&lt;/p&gt;
+&lt;h2&gt;Don't lose your understanding of what everything does&lt;/h2&gt;
+&lt;p&gt;Coding this way is not yet at the fire and forget stage. It is easy to get into a mess that you need to fix yourself. I sometimes drop chunks of problematic code into chat gpt at this stage to get help fixing it. &lt;/p&gt;</content><category term="Software"></category></entry><entry><title>VO2 Max</title><link href="https://blog.cathalanddad.com/vo2-max.html" rel="alternate"></link><published>2025-05-11T00:00:00+02:00</published><updated>2025-05-11T00:00:00+02:00</updated><author><name>Anthony Nolan</name></author><id>tag:blog.cathalanddad.com,2025-05-11:/vo2-max.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;(initial draft date 2024-11-17)&lt;/p&gt;
+&lt;h2&gt;Desire to improve fitness&lt;/h2&gt;
+&lt;p&gt;I want to improve my overall level of fitness. VO2 max seems to be a reasonable way to measure this. A proxy for VO2max is a …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;(initial draft date 2024-11-17)&lt;/p&gt;
+&lt;h2&gt;Desire to improve fitness&lt;/h2&gt;
+&lt;p&gt;I want to improve my overall level of fitness. VO2 max seems to be a reasonable way to measure this. A proxy for VO2max is a fitness test over a specific length of course. For example running a mile. For the test to be useful it needs to be repeatable and give consistent results over short periods of time. After an initial few attempts the typical time on the test needs to settle down to be reasonably repeatable. &lt;/p&gt;
+&lt;p&gt;I am cycling from my house in Glasnevin to Sutton and back as my test route. I have been repeating this route mainly for training rather than testing for quite some time now, but have only been serious about improving my times since about 4 months ago. &lt;/p&gt;
+&lt;h2&gt;Reasons&lt;/h2&gt;
+&lt;p&gt;I have never been a competitive athlete, but decided to see if I could improve my fitness more systematically than I normally do. I found that when I attempted the test/training route my times settled out at about 1 hr 8 mins with some variation. In particular I noticed that on the days that I did this cycle (or a longer route) I was very low on energy for a good part of the rest of the day. I typically cycle in the morning at the weekends. I am curious to see if I can reduce this level of energy depletion as I get fitter. In other words will I be able to do a hard workout of a reasonable length and intensity and not be as tired over the course of the rest of the day. &lt;/p&gt;
+&lt;p&gt;To do this I need to get fitter - fitness of this sort is really the ability of my cells to respire. Better aerobic fitness is less about heart and lung fitness than about my bodies ability to make use of all of that oxygen and fuel. &lt;/p&gt;
+&lt;p&gt;https://peterattiamd.com/how-does-vo2-max-correlate-with-longevity/&lt;/p&gt;
+&lt;h2&gt;Experiments&lt;/h2&gt;
+&lt;h3&gt;May 11th 2025&lt;/h3&gt;
+&lt;p&gt;My aerobic fitness is quite poor at the moment. So holding off on the longer cycles until I can get a better base level of fitness. Will try some interval training first.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Warmup cycle first&lt;/li&gt;
+&lt;li&gt;Sprint for 10 seconds followed by pause for 30&lt;/li&gt;
+&lt;li&gt;repeat 10 times&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Results&lt;/h3&gt;
+&lt;p&gt;(Monday May 12th 2025) 
+Although the 10 second sprints were a bit short, they definitely seemed to boost the amount of effort on the cycle significantly. The cycle was shorter than my normal distance, but I was still very tired with my energy levels sapped when I returned home. Also there were quite a lot of people using the cycle lane and the shorter bursts of speed were easier to do safely. So I did not stick strictly to the 10 second and 30 second durations that I had intended. I still think this is a good workout. I will probably try as shorter one next time to see what sort of output I can give.&lt;/p&gt;</content><category term="Health"></category></entry><entry><title>Use it or lose it</title><link href="https://blog.cathalanddad.com/use-it-or-lose-it.html" rel="alternate"></link><published>2025-05-10T00:00:00+02:00</published><updated>2025-05-10T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-05-10:/use-it-or-lose-it.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have been interested in the idea of neuroplasticity for a while now. It seems to be a very positive idea about the brain. The brain can rewire - sometimes very quickly - to handle new …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have been interested in the idea of neuroplasticity for a while now. It seems to be a very positive idea about the brain. The brain can rewire - sometimes very quickly - to handle new experiences and sets of stimuli. This is part of the physical realisation of the learning process. &lt;/p&gt;
+&lt;p&gt;To find out more I have started reading &lt;a href="https://en.wikipedia.org/wiki/Livewired_(book)"&gt;Livewired by David Eagleman&lt;/a&gt; It is a very engaging book with great examples to illustrate the ideas. One of those ideas is effectively 'Use it or lose it'. Our sensory inputs map to specific regions in our cortex. Parts of our bodies that are close together (like 2 points on your skin separated by a few millimetres) tend to map to similar or very close regions in the cortex. This leads to the idea of a Homunculus or little human inside our brains which maps to the parts of our bodies. &lt;/p&gt;
+&lt;p&gt;In people who lose a limb their cortical real estate has been shown to be reassigned or colonised by their neighbours. This can lead to heightened capabilities in people with some form of sensory loss like blindness. But it also means that we lose cortex for those skills which we don't use. When we need them they are gone. But maybe not completely.&lt;/p&gt;
+&lt;p&gt;I have recently started to refresh my old maths skills from college. It is 33 years since I finished my maths degree and have not used advanced maths much in my jobs. So it might seem that it would all be lost and I would have to relearn everything. But in fact I am finding that much of what I am doing is refreshing old knowledge a thin imprint of which seems to be still there in my mind. For concepts which are proving difficult I wonder how well I undrestood them back in college. &lt;/p&gt;
+&lt;p&gt;I don't really want to be able to do complex maths on a day to day basis, but this is really part of a larger project of giving myself as many thinking tools as possible. &lt;/p&gt;
+&lt;p&gt;Several years ago I decided to learn some lisp style programming. Lisp languages are very different in form to other languages like java and python. Programming languages provide a way to map concepts to code that a machine can understand. The variety in languages is not purely based on syntax, but can be more profound. For example Java was based on C++. Broadly speaking they are similar types of Object Oriented languages. Java tried to fix many of the important shortcomings of C++. Other languages however are more profoundly different. Lisp languages are of this separate type, and a language like assembler which is very low level is also very different to the OO languages mentioned. &lt;/p&gt;
+&lt;p&gt;Although I decided not to continue learning lisp style programming I found that the experience lead me to think differently about problems that I was trying to solve. And not just in software. This idea of using learning to 'change your mind' is what I am trying to do with the refresh of my maths and science background. &lt;/p&gt;</content><category term="Self improvement"></category></entry><entry><title>A new draft script for Pelican</title><link href="https://blog.cathalanddad.com/a-new-draft-script-for-pelican.html" rel="alternate"></link><published>2025-05-09T00:00:00+02:00</published><updated>2025-05-09T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-05-09:/a-new-draft-script-for-pelican.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;To make it easier to draft a blog entry for Pelican I got chat gpt to create a bash &lt;a href="https://github.com/anthonynolan/blog/blob/master/create_draft.sh"&gt;script&lt;/a&gt; for me. It is very simple, but with a few minor mods it does …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;To make it easier to draft a blog entry for Pelican I got chat gpt to create a bash &lt;a href="https://github.com/anthonynolan/blog/blob/master/create_draft.sh"&gt;script&lt;/a&gt; for me. It is very simple, but with a few minor mods it does exactly what I wanted and saved me maybe 20 minutes getting it right. This does mean that I will probably start to forget what little bash I already know, but that may not matter for much longer.&lt;/p&gt;</content><category term="Software"></category></entry><entry><title>Self learning Spanish</title><link href="https://blog.cathalanddad.com/self-learning-spanish.html" rel="alternate"></link><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-05-08:/self-learning-spanish.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I did Spanish in school a long time ago until I was 15 years old. I have made a few attempts to learn it properly since then, but have not managed to succeed yet …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I did Spanish in school a long time ago until I was 15 years old. I have made a few attempts to learn it properly since then, but have not managed to succeed yet. I have quite a bit of vocabulary and can get by in some situations in Spain, but I want to do better than this. Generally Spanish people are happy when I make an effort, but I think I have to do better than this. Given the very long period since I studied Spanish I am surprised at how much I have remembered. At the very least this is a useful leg up.&lt;/p&gt;
+&lt;p&gt;A few years ago I got to the end of the Duolingo Spanish course but found that I did not have conversational ability. I would not say it was a useless exercise, but was just not sufficient. In January of this year I decided that I would give Spanish another go. I asked Chat GPT for a &lt;a href="https://chatgpt.com/share/681c5557-61a8-8013-bf72-6028eb8da3ae"&gt;plan&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In summary it gave me a 4 phase plan with each phase lasting about a month. It got the wrong impression about my preexisting level of Spanish, so the timeline was a bit too ambitious. I was aiming at a family holiday to Tenerife where I would be able to speak some Spanish in everyday contexts. We are just back from the holiday and I think I did ok. More to do - and another holiday to Spain in 2 months to aim for.&lt;/p&gt;
+&lt;p&gt;The main tool I have been using is Busuu on Android. Busuu is a language learning app which seems to me to be a lot better than Duolingo. I did an initial assesssment with it and was recommended to start at level A2. A1 is for beginners. I worked through A2, but felt I needed to brush up on the more basic content too. So once I had passed the short A2 test I went back to do the A1 part of the app. &lt;/p&gt;
+&lt;p&gt;When I am confused by something I just screenshot the app and use Chat GPT to figure out the problem. This is an excellent extension of the app learning method and I have noticed very few mistakes from the AI. &lt;/p&gt;
+&lt;p&gt;Currently the app reckons my level of fluency is 38%. I am not sure about that, or even if that is a useful amount, but I definitely have a ways to go before I can be confident in everyday conversational situations. &lt;/p&gt;
+&lt;p&gt;In addition to Busuu I have also downloaded a set of Anki cards for Spanish vocabulary. There are 5000 words in there. I am less sure that this is useful. Many Spanish words are very similar to English words so they are easy. For the more difficult ones learning them in a context (the way Busuu teaches them) seems like a better way to learn. &lt;/p&gt;</content><category term="Spanish"></category></entry><entry><title>Projects to do together</title><link href="https://blog.cathalanddad.com/projects-to-do-together.html" rel="alternate"></link><published>2025-05-07T00:00:00+02:00</published><updated>2025-05-07T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-05-07:/projects-to-do-together.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;Over the last couple of summers Cathal has done some classes for kids at local college. The classes are aimed at children who are interested in things like Science and Maths, but there is …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;Over the last couple of summers Cathal has done some classes for kids at local college. The classes are aimed at children who are interested in things like Science and Maths, but there is a broad range. The catalog arrived this year and Cathal decided that he did not want to go to the college to do any of the classes. I thought that I could get some fun activities from these for us to do together. &lt;/p&gt;
+&lt;p&gt;I took a photo of one of the short course descriptions:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/cty.png" width="150"/&gt;&lt;/p&gt;
+&lt;p&gt;And asked chat gpt to put together an outline of a a course that I could go through with Cathal. 
+I used th o3 model with is pretty powerful. It did almost a minute's thinking before producing the answer. It was quite long, but contains some interesting stuff. &lt;/p&gt;
+&lt;p&gt;Here is a table that it produced which contains suggestions for each week. &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Week&lt;/th&gt;
+&lt;th&gt;Big Idea&lt;/th&gt;
+&lt;th&gt;Hands‑On Activities&lt;/th&gt;
+&lt;th&gt;What to Look For&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Shapes = Characters&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Turn circles, squares &amp;amp; triangles into heroes and villains.&lt;br&gt;‑ Play “silhouette guess‑who” – black out a shape and guess the character type.&lt;/td&gt;
+&lt;td&gt;Clear, readable silhouettes; variety of shapes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Personality &amp;amp; Back‑story&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Fill out a one‑page “character passport” (likes, fears, motto).&lt;br&gt;‑ Act out the character’s walk and pose.&lt;/td&gt;
+&lt;td&gt;Choices that feel consistent (e.g., shy pose vs. bold stance).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Proportions &amp;amp; Body Language&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Draw three body‑type extremes (chibi, average, tall/heroic).&lt;br&gt;‑ Use sticky notes to alter posture and mood.&lt;/td&gt;
+&lt;td&gt;Exaggeration that still feels balanced.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Faces &amp;amp; Expressions&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Emotions wheel: draw 6‑8 faces of same character.&lt;br&gt;‑ Mirror game – mimic then draw each other’s faces.&lt;/td&gt;
+&lt;td&gt;Eyes &amp;amp; brows doing most of the “acting.”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Genre Remix&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Redesign the Week‑2 hero for sci‑fi, fantasy, mystery, etc.&lt;br&gt;‑ Watch a favorite movie clip muted and sketch costumes.&lt;/td&gt;
+&lt;td&gt;How genre affects silhouette, props, palette.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Costume, Color &amp;amp; Symbol&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Create two color schemes: harmony vs. contrast.&lt;br&gt;‑ Design an emblem or prop that hints at powers.&lt;/td&gt;
+&lt;td&gt;Colors that support personality (e.g., warm = friendly).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Turnaround &amp;amp; Model Sheet&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Draw front, ¾, side, back views on grid paper.&lt;br&gt;‑ Trace over to check height consistency.&lt;/td&gt;
+&lt;td&gt;Alignment marks (eyes, elbows, knees) match.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Poses &amp;amp; Action&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ 5‑panel mini‑comic featuring a signature move.&lt;br&gt;‑ Use action verbs cards (“leap,” “sneak,” “blast”) for quick sketches.&lt;/td&gt;
+&lt;td&gt;Dynamic lines of action; overlap for depth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Inking &amp;amp; Digital Touch‑Ups&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Try brush pens or import sketches into free Krita or Autodesk Sketchbook for line‑art and flats.&lt;br&gt;‑ Compare pen vs. digital layers.&lt;/td&gt;
+&lt;td&gt;Clean, confident lines; limited color bleeding.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Portfolio &amp;amp; Sharing&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;‑ Select 5–8 best pieces, add title &amp;amp; one‑sentence pitch.&lt;br&gt;‑ Make a simple zine or slideshow for family “comic‑con.”&lt;/td&gt;
+&lt;td&gt;Cohesive style, clear growth from Week 1.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We did a short play drawing session together to get started. Will see if we can do some more. There were also suggestions for books to get to help us get better at drawing comics together.&lt;/p&gt;</content><category term="Things to do with kids"></category></entry><entry><title>Gravity sim with pygame showing path travelled</title><link href="https://blog.cathalanddad.com/gravity-sim-with-pygame-showing-path-travelled.html" rel="alternate"></link><published>2025-04-06T00:00:00+02:00</published><updated>2025-04-06T00:00:00+02:00</updated><author><name>Anthony and Cathal</name></author><id>tag:blog.cathalanddad.com,2025-04-06:/gravity-sim-with-pygame-showing-path-travelled.html</id><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;Short video showing the trails left by the object under gravity. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/blg1XQLY1C8"&gt;video&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/anthonynolan/physics"&gt;code here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The numbers used are not realistic for a gravity simulation and are modified to make the sim responsive. &lt;/p&gt;</content><category term="Physics"></category></entry><entry><title>learning about pygame</title><link href="https://blog.cathalanddad.com/learning-about-pygame.html" rel="alternate"></link><published>2025-04-05T16:22:00+02:00</published><updated>2025-04-05T16:22:00+02:00</updated><author><name>Anthony and Cathal</name></author><id>tag:blog.cathalanddad.com,2025-04-05:/learning-about-pygame.html</id><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;Today I learned about pygame with my dad. We are working on our physics simulator, it simulates gravitational pull. We are planning on adding vectors and another mass.&lt;/p&gt;</content><category term="Physics"></category></entry><entry><title>Physics Simulation with pygame</title><link href="https://blog.cathalanddad.com/physics-simulation-with-pygame.html" rel="alternate"></link><published>2025-04-04T19:15:00+02:00</published><updated>2025-04-04T19:15:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-04-04:/physics-simulation-with-pygame.html</id><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="https://blog.cathalanddad.com/video/video.mp4" type="video/mp4"&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;</content><category term="Physics"></category></entry><entry><title>Hyperefficient</title><link href="https://blog.cathalanddad.com/hyperefficient.html" rel="alternate"></link><published>2025-04-04T12:44:00+02:00</published><updated>2025-04-04T12:44:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-04-04:/hyperefficient.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Hyperefficient&lt;/h2&gt;
+&lt;p&gt;I am going to try some small experiments based on reading this book.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/hyperefficient/20250404_122330.jpg" alt="Cover" width="400"/&gt;&lt;/p&gt;
+&lt;p&gt;The first one will be based on the idea of structuring a work session. I am going to try this …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Hyperefficient&lt;/h2&gt;
+&lt;p&gt;I am going to try some small experiments based on reading this book.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/hyperefficient/20250404_122330.jpg" alt="Cover" width="400"/&gt;&lt;/p&gt;
+&lt;p&gt;The first one will be based on the idea of structuring a work session. I am going to try this and see if it works better than the Pomodoro method. I often find Pomodoro hard to stick with if I am working on something boring and interrupting if I am doing something better. The 90 minute length of these sessions should help.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/hyperefficient/20250404_122529.jpg" alt="Cover" width="400"/&gt;&lt;/p&gt;
+&lt;h2&gt;Experiment detail&lt;/h2&gt;
+&lt;p&gt;Try 2 of these 90 minute sessions this afternoon. Note how they go and decide whether or not to continue with this.&lt;/p&gt;</content><category term="Books"></category></entry><entry><title>Most Common Spanish words to Anki</title><link href="https://blog.cathalanddad.com/most-common-spanish-words-to-anki.html" rel="alternate"></link><published>2025-02-23T14:50:00+01:00</published><updated>2025-02-23T14:50:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-02-23:/most-common-spanish-words-to-anki.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Get the most common words from Spanish&lt;/h1&gt;
+&lt;p&gt;Results will depend on the corpus used. I am not interested in accuracy, so just got a Spanish corpus from nltk. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;figured out which words were junk …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Get the most common words from Spanish&lt;/h1&gt;
+&lt;p&gt;Results will depend on the corpus used. I am not interested in accuracy, so just got a Spanish corpus from nltk. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;figured out which words were junk and removed them (underscores etc)&lt;/li&gt;
+&lt;li&gt;Count frequencies&lt;/li&gt;
+&lt;li&gt;Dump this to a list suitable for prompting an llm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Used this prompt&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Thanslate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;these&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;words&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;english&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;want&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;one&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;spanish&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;word&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;followed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;by&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;comma&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;english&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;translation&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;para, como, p...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally a bit of python to put them in the right format for anki import.&lt;/p&gt;
+&lt;p&gt;The code is &lt;a href="https://github.com/anthonynolan/most-common-spanish-words"&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="Software"></category></entry><entry><title>Learning Python</title><link href="https://blog.cathalanddad.com/learning-python.html" rel="alternate"></link><published>2024-11-16T14:50:00+01:00</published><updated>2024-11-16T14:50:00+01:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2024-11-16:/learning-python.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Not the &lt;em&gt;Hello World!&lt;/em&gt; version&lt;/h1&gt;
+&lt;p&gt;A list of resources and practices to get python beyond the basics&lt;/p&gt;
+&lt;h2&gt;The book&lt;/h2&gt;
+&lt;p&gt;I am using &lt;a href="https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/"&gt;Fluent Python&lt;/a&gt; by Luciano Romalho as the starting point. I bought this …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h1&gt;Not the &lt;em&gt;Hello World!&lt;/em&gt; version&lt;/h1&gt;
+&lt;p&gt;A list of resources and practices to get python beyond the basics&lt;/p&gt;
+&lt;h2&gt;The book&lt;/h2&gt;
+&lt;p&gt;I am using &lt;a href="https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/"&gt;Fluent Python&lt;/a&gt; by Luciano Romalho as the starting point. I bought this book years ago and never really got the best value from it. I skipped too much of it. Now on a revisit some sections are no longer as up to date as I would like, but mostly it is still excellent. There is a second edition (linked) which I am sure brings it up to date. If python is a key skill you should buy a paper copy of this book. It is well worth the money.&lt;/p&gt;
+&lt;p&gt;My process is to take a chapter at a time and read it in depth - this can take a few hours for the more substantial chapters which in this book is most of them. 
+I have a python repl at the ready to try out some of the examples. &lt;/p&gt;
+&lt;p&gt;(The new &lt;a href="https://docs.python.org/3/whatsnew/3.13.html#whatsnew313-better-interactive-interpreter"&gt;3.13 repl&lt;/a&gt; is great. Simple things like multiline editing that works and colour output are a big step up from the seriously outdated prior versions)&lt;/p&gt;
+&lt;h2&gt;Commit to memory&lt;/h2&gt;
+&lt;p&gt;Then I try to extract anything that I need to remember with &lt;a href="https://apps.ankiweb.net/"&gt;Anki&lt;/a&gt;. This is a bit of a chore at first, but after a while you notice yourself remembering many more significant things. Working in technology there is a lot to take in and a lot of confusion can creep into your work if you don't make this part of your practice. &lt;/p&gt;
+&lt;h2&gt;Practice with an AI&lt;/h2&gt;
+&lt;p&gt;This kind of interlaces with the reading and memorising sections. I keep a single thread &lt;a href="https://chatgpt.com/share/6738b604-2374-8013-bd34-734e7df6593a"&gt;conversation&lt;/a&gt; in Chat gpt and tell it what section I am interested in practicing. It usually gives me 'starter code' - the answer - even though I tell it I am trying to learn, but that is no harm as I just ignore that until I have given my stuff a go. I find this a very effective way to learn as I can ask questions for clarificaiton, but am not looking for the bulk of the material to come from the ai. &lt;/p&gt;
+&lt;p&gt;As I progress with this I will share photos of the contents pages of the book with the model to see what else it can come up with. &lt;/p&gt;
+&lt;p&gt;So far I have been at this for a couple of weeks - in my spare time with a good bit extra at the weekends. A mixture of glad that I am learning this important skill at last and disappointment that I have let this lie for so long without skilling up properly.&lt;/p&gt;
+&lt;h2&gt;Regular practices to keep up&lt;/h2&gt;
+&lt;p&gt;There is a lot of useful information in the python docs. From the whats new sections to the PEPs (both new ones and older ones). The bar is high in these docs, so they are an opportunity not to be missed. There is so much here that it is almost always time well spent.&lt;/p&gt;</content><category term="Software"></category></entry><entry><title>Notes on The Man from the Future - fission</title><link href="https://blog.cathalanddad.com/notes-on-the-man-from-the-future-fission.html" rel="alternate"></link><published>2024-07-30T09:39:00+02:00</published><updated>2024-07-30T09:39:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2024-07-30:/notes-on-the-man-from-the-future-fission.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;The fissile material was Plutonium. It was in the shape of 2 hemispheres with a central core of Berillium and Polonium - the initiator. The initiator's job was to produce some neutrons to start the …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;The fissile material was Plutonium. It was in the shape of 2 hemispheres with a central core of Berillium and Polonium - the initiator. The initiator's job was to produce some neutrons to start the nuclear chain reaction in the surrounding sphere of Pu. The Pu is sub critical as assembled, but the high explosive lenses surrounding it are used to squash it into a critical sphere along with getting the initiator to work.
+Surrounding the Pu core is a thick layer of unrefined Uranium. This is very high density material - a forerunner of depleted Uranium? Natural Uranium has about 0.7% of the fissile isotope. Depleted uranium has less. It is a very dense material - about 70% more dense than lead. Used in weapons, radioactive material transport. 
+Outside the unrefined uranium is an aluminium shell called the tamper. It along with the Uranium shell are there to prevent a large drop of pressure behind the explosive lenses. I think this is to make the action of the explosion on the core more predictable. &lt;/p&gt;
+&lt;p&gt;The explosive lenses are in the shape of a football - &lt;a href="https://en.wikipedia.org/wiki/Truncated_icosahedron"&gt;a truncated icosahedron&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;The first live test was called Trinity. It took place at the Almogordo test range about 200 miles away from Los Alomos. The area was flat and so could be viewed from a great distance. The trigger was pulled from 10,000 yards away. Viewers - scientists and others - were positioned about 20 miles away.&lt;/p&gt;
+&lt;p&gt;The blast fused the sand in the area into glass called Trinitite. This was worn as jewelery soon after and could cause skin burns. &lt;/p&gt;
+&lt;p&gt;The thermonuclear bomb was called the Super. A patent for this was first produced by Von Neumann and Fuchs. Fuchs was a Soviet spy and gave all the secrets to the Russians. This inspired them to start their own full scale thermonuclear weapons programme. &lt;/p&gt;
+&lt;p&gt;Teller designed the first successful thermonuclear bomb. &lt;/p&gt;
+&lt;p&gt;The Russians Detonated the &lt;a href="https://en.wikipedia.org/wiki/Tsar_Bomba"&gt;Tsar Bomba&lt;/a&gt; in the Siberian Arctic. The TNT equivalent of this bomb has a volume of a cube of dynamite with a &lt;a href="https://chatgpt.com/share/6974bc20-ea02-463d-a128-111a7a25c685"&gt;310 metre side&lt;/a&gt;. &lt;/p&gt;</content><category term="Notes"></category></entry><entry><title>Curry improvement guide with Chat GPT</title><link href="https://blog.cathalanddad.com/curry-improvement-guide-with-chat-gpt.html" rel="alternate"></link><published>2024-07-25T17:26:00+02:00</published><updated>2024-07-25T17:26:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2024-07-25:/curry-improvement-guide-with-chat-gpt.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Sous Chef GPT&lt;/h2&gt;
+&lt;p&gt;I wanted to see if I could use Chat GPT to become a better cook. I tried the Sous Chef GPT that Open AI produced themselves a while ago. I told …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Sous Chef GPT&lt;/h2&gt;
+&lt;p&gt;I wanted to see if I could use Chat GPT to become a better cook. I tried the Sous Chef GPT that Open AI produced themselves a while ago. I told it some things I had and the sort of dish I would like. It was a disaster. We did not even eat it. 
+Lesson learned: don't just follow what they say blindly.&lt;/p&gt;
+&lt;p&gt;Next I decided to get better at making curries. This was not just about getting a recipe, but finding out about techniques. Firstly I asked about how I would generally get better at making curries.&lt;/p&gt;
+&lt;p&gt;Becoming a better curry cook involves mastering techniques, understanding ingredients, and experimenting with flavors. Here are some ideas to help you improve your curry cooking skills:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Learn the Basics
+Understand the Foundations: Study the essential components of curry, including spices, aromatics, and the balance of flavors.
+Practice Knife Skills: Efficiently chopping onions, garlic, and ginger can significantly impact the texture and taste of your curry.&lt;/li&gt;
+&lt;li&gt;Experiment with Spices
+Create Your Spice Blends: Try making garam masala, curry powder, and other spice blends from scratch.
+Toast Spices: Toast whole spices before grinding them to enhance their flavor.&lt;/li&gt;
+&lt;li&gt;Master Cooking Techniques
+Browning Aromatics: Learn to brown onions, garlic, and ginger properly, as this forms the flavor base of many curries.
+Layering Flavors: Add spices at different stages of cooking to develop depth in your curry.&lt;/li&gt;
+&lt;li&gt;Explore Different Cuisines
+Regional Varieties: Explore curries from different regions, such as Indian, Thai, Japanese, and Caribbean.
+Learn from Experts: Watch cooking shows, read cookbooks, and follow recipes from renowned chefs.&lt;/li&gt;
+&lt;li&gt;Focus on Ingredients
+Use Fresh Ingredients: Fresh herbs and high-quality spices can make a significant difference in your curry.
+Experiment with Proteins: Try different proteins like chicken, lamb, beef, fish, tofu, and legumes.&lt;/li&gt;
+&lt;li&gt;Practice Consistently
+Cook Regularly: The more you cook, the more you'll understand the nuances of curry making.
+Keep a Cooking Journal: Note what works and what doesn't, and adjust recipes based on your preferences.&lt;/li&gt;
+&lt;li&gt;Balance Flavors
+Taste as You Go: Continuously taste your curry and adjust the seasoning.
+Balance Sweet, Sour, Salty, and Spicy: Ensure your curry has a harmonious balance of flavors.&lt;/li&gt;
+&lt;li&gt;Refine Your Palate
+Taste Different Curries: Try curries from various restaurants and compare their flavors and techniques.
+Attend Tasting Events: Participate in food festivals or curry tasting events to expand your flavor profile.&lt;/li&gt;
+&lt;li&gt;Use Quality Equipment
+Invest in Good Pans: A heavy-bottomed pan can help distribute heat evenly.
+Use a Spice Grinder: Freshly ground spices can greatly enhance the flavor of your curry.&lt;/li&gt;
+&lt;li&gt;Incorporate Feedback
+Cook for Others: Invite friends or family over and ask for honest feedback.
+Join Cooking Communities: Participate in online forums, social media groups, or local cooking clubs to share experiences and get tips.&lt;/li&gt;
+&lt;li&gt;Stay Inspired
+Watch Cooking Shows: Programs like "MasterChef," "Chef’s Table," or shows focused on Indian cuisine can provide inspiration and techniques.
+Follow Food Bloggers: Many food bloggers specialize in curries and offer step-by-step recipes and tips.&lt;/li&gt;
+&lt;li&gt;Attend Workshops
+Cooking Classes: Take part in cooking classes, either online or in-person, focusing on curry making.
+Culinary Tours: Travel to regions known for their curries and take local cooking classes.&lt;/li&gt;
+&lt;li&gt;Understand the Science
+Learn Food Chemistry: Understanding how heat, fat, and acid interact with spices and other ingredients can help you create more flavorful curries.
+Study Fermentation: Incorporate fermented ingredients like yogurt, kimchi, or pickles to add complexity to your curry.&lt;/li&gt;
+&lt;li&gt;Stay Organized
+Mise en Place: Prepare all your ingredients before you start cooking to ensure a smooth cooking process.
+Recipe Development: Experiment with creating your recipes once you’re comfortable with the basics.&lt;/li&gt;
+&lt;li&gt;Health Considerations
+Healthy Substitutes: Experiment with healthier ingredients like coconut milk instead of cream or ghee, and use more vegetables.
+Control Spice Levels: Adjust the heat level to cater to different tastes and dietary restrictions.
+By integrating these ideas into your cooking practice, you'll be able to develop your curry-making skills and create delicious, flavorful dishes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;All useful advice. Next I started asking about specific recipes. I found asking for a recipe from a famous chef was a good idea. I don't know if these are really recipes from these chefs, but they are just a starting point.&lt;/p&gt;
+&lt;p&gt;I don't like vegtable oil, so I ask for any ingredients that I don't want to be removed. If I think that a removal or substitution may impact the result I ask about that and am usually happy with the answers.&lt;/p&gt;
+&lt;p&gt;Something else that the model is good at is changing spicy recipes to make them more child friendly. I wanted to make a Vindaloo recipe that I had made less spicy after the fact. I got great advice here on adding things like yogurt along with instructions on preventing it curdling. &lt;/p&gt;
+&lt;p&gt;This is the final result:&lt;/p&gt;
+&lt;p&gt;Ingredients:
+For the Marinade:&lt;/p&gt;
+&lt;p&gt;2 lbs (900g) boneless lamb shoulder, cut into 1.5-inch cubes
+1 teaspoon ground turmeric
+1 teaspoon salt
+2 tablespoons white wine vinegar
+For the Spice Paste:&lt;/p&gt;
+&lt;p&gt;2 tablespoons white wine vinegar
+1 tablespoon ground cumin
+1 tablespoon ground coriander
+1 tablespoon paprika
+1 teaspoon ground mustard seeds
+1 teaspoon ground black pepper
+1 teaspoon ground cinnamon
+1 teaspoon ground cloves
+1 teaspoon ground cardamom
+6-8 dried red chilies, soaked in warm water for 20 minutes, then drained
+4 cloves garlic, minced
+1-inch piece of ginger, minced
+For the Curry:&lt;/p&gt;
+&lt;p&gt;4 tablespoons coconut oil (or vegetable oil)
+2 large onions, finely chopped
+1 tablespoon tomato paste
+1 cup water
+Salt to taste
+Fresh cilantro, chopped (for garnish)
+Instructions:
+Marinate the Lamb:&lt;/p&gt;
+&lt;p&gt;In a large bowl, combine the lamb pieces with ground turmeric, salt, and white wine vinegar. Mix well, cover, and refrigerate for at least 2 hours, preferably overnight.
+Prepare the Spice Paste:&lt;/p&gt;
+&lt;p&gt;In a blender or food processor, combine the white wine vinegar, ground cumin, ground coriander, paprika, ground mustard seeds, ground black pepper, ground cinnamon, ground cloves, ground cardamom, soaked red chilies, minced garlic, and minced ginger. Blend until you get a smooth paste.
+Cook the Aromatics:&lt;/p&gt;
+&lt;p&gt;Heat the coconut oil in a large, heavy-bottomed pan over medium-high heat.
+Add the finely chopped onions and sauté until they turn golden brown, about 10-12 minutes.
+Cook the Spice Paste:&lt;/p&gt;
+&lt;p&gt;Add the prepared spice paste to the pan. Cook, stirring frequently, for about 5 minutes until the paste thickens and the oil begins to separate.
+Cook the Lamb:&lt;/p&gt;
+&lt;p&gt;Add the marinated lamb pieces to the pan. Stir well to coat the lamb with the spice mixture. Cook for about 10 minutes until the lamb is browned on all sides.
+Add Tomato Paste and Water:&lt;/p&gt;
+&lt;p&gt;Stir in the tomato paste and cook for another 2-3 minutes.
+Add the water and bring the mixture to a simmer.
+Simmer the Curry:&lt;/p&gt;
+&lt;p&gt;Reduce the heat to low, cover the pan, and let the curry simmer gently for about 1.5 to 2 hours, or until the lamb is tender. Stir occasionally and check the seasoning, adding salt to taste.
+Serve:&lt;/p&gt;
+&lt;p&gt;Garnish with fresh chopped cilantro.
+Serve hot with steamed rice, naan bread, or any Indian flatbread.&lt;/p&gt;</content><category term="Cooking"></category></entry><entry><title>Vienna - How the city of ideas created the modern world by Richard Cockett</title><link href="https://blog.cathalanddad.com/vienna-how-the-city-of-ideas-created-the-modern-world-by-richard-cockett.html" rel="alternate"></link><published>2024-07-24T15:51:00+02:00</published><updated>2024-07-24T15:51:00+02:00</updated><author><name>Anthony Nolan</name></author><id>tag:blog.cathalanddad.com,2024-07-24:/vienna-how-the-city-of-ideas-created-the-modern-world-by-richard-cockett.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Freedom of movement in the empire&lt;/h2&gt;
+&lt;p&gt;The Emperor of Austria-Hungary insisted on freedom of movement of people within the Empire. This allowed large numbers of people to move from the east of the country …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Freedom of movement in the empire&lt;/h2&gt;
+&lt;p&gt;The Emperor of Austria-Hungary insisted on freedom of movement of people within the Empire. This allowed large numbers of people to move from the east of the country to the city of Vienna and its suburbs. This is a simple case of allowing people to move from places of low productivity to places of high. I wonder what the impact was the places that experienced this talent drain?&lt;/p&gt;
+&lt;h2&gt;Bildung&lt;/h2&gt;
+&lt;p&gt;This was the culture of self improvement over amassing money and property. The Vienniese had strong focus on the value of education and learning. The extended to science, the arts and many other ares. &lt;/p&gt;
+&lt;p&gt;Ringstrasse and the surrounding wealthy areas had may amatuer scientists and zoologists. Large numbers of animals and plants kept in apartments.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;City of Music. Mahler, Schoenberg and Alban Berg.&lt;/li&gt;
+&lt;li&gt;Art and literature. Gustav Klimt, Egon Schiele and Kolomon Moser.&lt;/li&gt;
+&lt;li&gt;Psychoanalysis. Freud.&lt;/li&gt;
+&lt;li&gt;Philosophy. Popper, Wittgenstein.&lt;/li&gt;
+&lt;li&gt;Physics. Schrödinger.&lt;/li&gt;
+&lt;li&gt;Architecture. Adolf Loos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Red Vienna&lt;/h2&gt;
+&lt;p&gt;This was the socialist and communist leanings of many in Vienna - reflecting much of Europe's interest in Communism in the inter war years. &lt;/p&gt;
+&lt;h2&gt;Black Vienna&lt;/h2&gt;
+&lt;p&gt;Populist groups in opposition to the socialists of Red Vienna. The nurturing ground for Hitler. &lt;/p&gt;
+&lt;h2&gt;Anchluss&lt;/h2&gt;
+&lt;p&gt;The Nazis Annexed Austria in 1938, an event known as the Anschluss, and began the persecution and purging of jews. This marked the end of the open, enlightened Viennese. &lt;/p&gt;
+&lt;h2&gt;Influence in America&lt;/h2&gt;
+&lt;p&gt;Vinnese emígrés were a big influence in America - in Architecture and the arts as well as being founders of the ideas of consumer science. The focus group is essentially one of their inventions. &lt;/p&gt;
+&lt;h2&gt;Influence in the UK&lt;/h2&gt;
+&lt;p&gt;Viennese émigrés also had notable influence in the UK, particularly in fields such as architecture, music, and psychoanalysis.&lt;/p&gt;
+&lt;h2&gt;The Austrian School&lt;/h2&gt;
+&lt;p&gt;The Austrian School of Economics is a libertarian school advocating for small government and private property.&lt;/p&gt;</content><category term="Notes"></category></entry><entry><title>Daddy is a Doctor</title><link href="https://blog.cathalanddad.com/daddy-is-a-doctor.html" rel="alternate"></link><published>2024-07-23T10:22:00+02:00</published><updated>2024-07-23T10:22:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2024-07-23:/daddy-is-a-doctor.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;This is an idea from Daniel Dennett's book Intuition pumps and other tools for thinking.&lt;/p&gt;
+&lt;p&gt;The idea here is that a little kid could say something like the above and not really know what …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;This is an idea from Daniel Dennett's book Intuition pumps and other tools for thinking.&lt;/p&gt;
+&lt;p&gt;The idea here is that a little kid could say something like the above and not really know what this meant. This does not mean they are lying, but their concept of what a doctor is (or even a daddy) is not well formed. As they grow up and find out more about life they will have a greater understanding of what those words mean, but initially it is quite an isolated belief for them.&lt;/p&gt;
+&lt;p&gt;I think an interesting thing about this idea is that beliefs have a support structure or set of connections around them. Some may start like this - quite isolated, but connected over time. While other beliefs may be tethered to some of our existing beliefs. &lt;/p&gt;
+&lt;p&gt;This is a useful idea to keep in mind when learning new concepts. I have often found getting things that I have studied into my everyday life to be very difficult. Courses which I had done well in (Natural Language Processing on Coursera for example) are very difficult to fit into real use. In the case of the NLP course I worked through all of the code notebooks again with as little reference to the supporting material as possible - make my mind dig for the ideas. Although I found this very useful it is a time consuming approach. And even with this double time commitment I am still not sure that I could reproduce all of the results in this course. &lt;/p&gt;
+&lt;p&gt;Maybe this is an argument to learn less, but learn it better. 'Internalise' is a word that used to be in more frequent usage about concepts learned in work. I think that idea is very important. &lt;/p&gt;
+&lt;p&gt;During the Industrial Revolution in Britian people became obsessed with 'useful knowledge'. There were Encyclopedias and Almanacs and garden shed inventors trying to get things to work in the world. We would probably be a lot better off if we paid more attention to how we are going to use the things we learn.&lt;/p&gt;</content><category term="Notes"></category></entry></feed>
