@@ -14,11 +14,11 @@ Author: Anthony
 </script>
 
 
-I have been doing some experiments with diffusion models for images recently. I wanted to try out [DiffusionGemma](https://ai.google.dev/gemma/docs/diffusiongemma) which is an experimental text diffusion model from Google. I would have guessed that diffusion would be slower at producing text than a normal autoregressive language model, but that does not appear to be the case. Text diffusion models are, like the image models do not produce one token at a time. Instead they incrementally update a single space - an image or a canvas of text in this case. The first thing to do was get the model running. 
+I have been doing some experiments with diffusion models for images recently. I wanted to try out [DiffusionGemma](https://ai.google.dev/gemma/docs/diffusiongemma) which is an experimental text diffusion model from Google. I would have guessed that diffusion would be slower at producing text than a normal autoregressive language model, but that does not appear to be the case. Text diffusion models, like the image models do not produce one token at a time. Instead they incrementally update a single space - an image or a canvas of text in this case. The first thing to do was get the model running. 
 
 ## Local
 
-I have a windows laptop with a basic consumer grade GPU. It has about 6 Gb of VRAM which is tiny compared to something designed for AI rather than basic gaming. I have however been able to run a variety of largish text models there for experimentation purposes. I find it faster to iterate this way than I would if I had to be constantly moving code to a GPU on RunPod. This turned out to be impossible for a model the size of DiffusionGemma. It is an open weight model and I had wrongly assumed that this meant it was small. I tried to load the model from Hugging Face using `device_map="auto"`. This resulted in the model being spread across CPU and GPU and giving some very bad errors when I tried to generate (matrix shape mismatches). A bit of exploration revealed that this was a GPU memory issue. It is possible that I could have gotten the model running on CPU along where I have a lot more memory, but inference would have been extremely slow if it was possible at all. So I switched to RunPod. 
+I have a windows laptop with a basic consumer grade GPU (NVIDIA GeForce RTX 4050). It has about 6 Gb of VRAM which is tiny compared to something designed for AI rather than basic gaming. I have however been able to run a variety of largish text models there for experimentation purposes. I find it faster to iterate this way than I would if I had to be constantly moving code to a GPU on RunPod. This turned out to be impossible for a model the size of DiffusionGemma. It is an open weight model and I had wrongly assumed that this meant it was small. I tried to load the model from Hugging Face using `device_map="auto"`. This resulted in the model being spread across CPU and GPU and giving some very bad errors when I tried to generate (matrix shape mismatches). A bit of exploration revealed that this was a GPU memory issue. It is possible that I could have gotten the model running on CPU along where I have a lot more memory, but inference would have been extremely slow if it was possible at all. So I switched to RunPod. 
 
 
 ## RunPod
@@ -29,6 +29,7 @@ First efforts here failed too because of the memory issue. I found a way to figu
 uv run accelerate estimate-memory google/diffusiongemma-26B-A4B-it
 ```
 (with the accelerate lib added to your uv project) 
+
 returns the memory requirements for a few levels of quantization. I don't think these quantizations necessarily have to exist, so just check which one you are expecting to use in the HF or other docs. 
 
 This is useful too and should give some memory requirement numbers. But note that once the model is in your cache it will not give you correct numbers:
