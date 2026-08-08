@@ -1,5 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-05-22T00:00:00+02:00</updated><entry><title>Using Codex to enhance an anki deck</title><link href="https://blog.cathalanddad.com/using-codex-to-enhance-an-anki-deck.html" rel="alternate"></link><published>2026-05-22T00:00:00+02:00</published><updated>2026-05-22T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-05-22:/using-codex-to-enhance-an-anki-deck.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-08-08T00:00:00+02:00</updated><entry><title>Running DiffusionGemma on RunPod</title><link href="https://blog.cathalanddad.com/running-diffusiongemma-on-runpod.html" rel="alternate"></link><published>2026-08-08T00:00:00+02:00</published><updated>2026-08-08T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-08-08:/running-diffusiongemma-on-runpod.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have been doing some experiments with diffusion models for images recently. I wanted to try out &lt;a href="https://ai.google.dev/gemma/docs/diffusiongemma"&gt;DiffusionGemma&lt;/a&gt; which is an experimental text diffusion model from Google. I would have guessed that diffusion would …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have been doing some experiments with diffusion models for images recently. I wanted to try out &lt;a href="https://ai.google.dev/gemma/docs/diffusiongemma"&gt;DiffusionGemma&lt;/a&gt; which is an experimental text diffusion model from Google. I would have guessed that diffusion would be slower at producing text than a normal autoregressive language model, but that does not appear to be the case. Text diffusion models are, like the image models do not produce one token at a time. Instead they incrementally update a single space - an image or a canvas of text in this case. The first thing to do was get the model running. &lt;/p&gt;
+&lt;h2&gt;Local&lt;/h2&gt;
+&lt;p&gt;I have a windows laptop with a basic consumer grade GPU. It has about 6 Gb of VRAM which is tiny compared to something designed for AI rather than basic gaming. I have however been able to run a variety of largish text models there for experimentation purposes. I find it faster to iterate this way than I would if I had to be constantly moving code to a GPU on RunPod. This turned out to be impossible for a model the size of DiffusionGemma. It is an open weight model and I had wrongly assumed that this meant it was small. I tried to load the model from Hugging Face using &lt;code&gt;device_map="auto"&lt;/code&gt;. This resulted in the model being spread across CPU and GPU and giving some very bad errors when I tried to generate (matrix shape mismatches). A bit of exploration revealed that this was a GPU memory issue. It is possible that I could have gotten the model running on CPU along where I have a lot more memory, but inference would have been extremely slow if it was possible at all. So I switched to RunPod. &lt;/p&gt;
+&lt;h2&gt;RunPod&lt;/h2&gt;
+&lt;p&gt;First efforts here failed too because of the memory issue. I found a way to figure out how much memory a model would need. Running this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv run accelerate estimate-memory google/diffusiongemma-26B-A4B-it
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(with the accelerate lib added to your uv project) 
+returns the memory requirements for a few levels of quantization. I don't think these quantizations necessarily have to exist, so just check which one you are expecting to use in the HF or other docs. &lt;/p&gt;
+&lt;p&gt;This is useful too and should give some memory requirement numbers. But note that once the model is in your cache it will not give you correct numbers:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;uv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;google&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;diffusiongemma&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A4B&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;dry&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So I picked an H200 GPU on RunPod with 141 Gb of VRAM, enough to fit all of the layers. I don't think this is a very exact science. Beyond the numbers given by the &lt;code&gt;estimate-memory&lt;/code&gt; call above there are other memory requirements which I have found a bit more difficult to get handle on. I gave myself a bit of headroom and everything seemed to work fine. &lt;/p&gt;
+&lt;p&gt;This model uses some very cutting edge technologies and will need a recent version of torch to work properly. Initially I was getting an error because my GPU did not support a particular type of matrix multiplication which is useful for MOE models - of which &lt;code&gt;gemma-diff&lt;/code&gt; is one. An additional parameter got me out of this. But getting the right version of the libs to work required a bit of trial and error. (Hence this post)&lt;/p&gt;
+&lt;p&gt;Next up I ssh'd to the server and installed the most recent version of uv. If I used pip to do this, which is my normal way, I got an old version of uv which did not allow me to exclude deps. So to install uv I did this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;curl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;LsSf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;astral&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;uv&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;
+&lt;span class="k"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$HOME/.local/bin:$PATH&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;
+&lt;span class="n"&gt;uv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then I figured out where the local python 3 was installed and made sure I was happy with the version. If that is ok you can run this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;uv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;venv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nx"&gt;python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nx"&gt;system&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;site&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;packages&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;--system-site-packages&lt;/code&gt; is necessary to make sure that the venv is not completely isolated from the local site packages. Without that uv will download all of the (huge) packages required to get this to work. &lt;/p&gt;
+&lt;p&gt;Then run &lt;code&gt;uv sync&lt;/code&gt; if it shows you a long line up of packages that it is slowly downloading, something is wrong. These pods include version of the cuda drivers, torch and some other things to make this setup faster. &lt;/p&gt;
+&lt;p&gt;Nearly ready to start the jupyter notebook in RunPod. To install your kernel do this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv run python -m ipykernel install --user --name diffusion --display-name &amp;quot;Python (diffusion)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then open your notebook, select that kernel and you should be able to run things. &lt;/p&gt;
+&lt;h2&gt;Running a few experiments&lt;/h2&gt;
+&lt;p&gt;My experiments are very minimal. I ran inference: &lt;em&gt;Why is the sky blue?&lt;/em&gt; and then I played with streaming. I did not check the quality of the outputs, but did notice that it seemed very fast at producing tokens.&lt;/p&gt;
+&lt;h2&gt;Speed results compared to Artificial Analysis&lt;/h2&gt;
+&lt;p&gt;You can see from this tiny experiment that DiffusionGemma produced 271 tokens in 0.7s. This is roughly 387 tokens per minute.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/diffusion/gemma_speed.png" alt="gemma-speed"/&gt;&lt;/p&gt;
+&lt;p&gt;From Artificial Analysis that is roughly the speed of Gemini Flash Lite:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.cathalanddad.com/images/diffusion/artificial.png" alt="artificial-analysis"/&gt;&lt;/p&gt;
+&lt;p&gt;Artificial Analysis uses a slightly different method to count tokens (settling on OpenAI tokens for all output), but this is unlikely to make much difference. &lt;/p&gt;
+&lt;h2&gt;Code&lt;/h2&gt;
+&lt;p&gt;You can find the code for this &lt;a href="https://github.com/anthonynolan/diffusion_experiments"&gt;here&lt;/a&gt; the specific notebook is the &lt;code&gt;diffusion_gemma.ipynb&lt;/code&gt; one. &lt;/p&gt;</content><category term="AI"></category></entry><entry><title>Using Codex to enhance an anki deck</title><link href="https://blog.cathalanddad.com/using-codex-to-enhance-an-anki-deck.html" rel="alternate"></link><published>2026-05-22T00:00:00+02:00</published><updated>2026-05-22T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-05-22:/using-codex-to-enhance-an-anki-deck.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
 &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
 &lt;script&gt;
   window.dataLayer = window.dataLayer || [];
