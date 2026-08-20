@@ -23,7 +23,7 @@ CONFIG = {
     "deploy_path": SETTINGS["OUTPUT_PATH"],
     # Host and port for `serve`
     "host": "localhost",
-    "port": 8000,
+    "port": int(os.environ.get("PORT", "8001")),
 }
 
 

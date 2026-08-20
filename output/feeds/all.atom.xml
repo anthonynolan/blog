@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-08-08T00:00:00+02:00</updated><entry><title>Running DiffusionGemma on RunPod</title><link href="https://blog.cathalanddad.com/running-diffusiongemma-on-runpod.html" rel="alternate"></link><published>2026-08-08T00:00:00+02:00</published><updated>2026-08-08T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-08-08:/running-diffusiongemma-on-runpod.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-08-20T00:00:00+02:00</updated><entry><title>Beef Burritos</title><link href="https://blog.cathalanddad.com/beef-burritos.html" rel="alternate"></link><published>2026-08-20T00:00:00+02:00</published><updated>2026-08-20T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-08-20:/beef-burritos.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 kg ground beef&lt;/li&gt;
+&lt;li&gt;2 onions&lt;/li&gt;
+&lt;li&gt;4 garlic cloves&lt;/li&gt;
+&lt;li&gt;2 tsp cumin&lt;/li&gt;
+&lt;li&gt;2 tsp smoked paprika&lt;/li&gt;
+&lt;li&gt;2 tsp chilli powder&lt;/li&gt;
+&lt;li&gt;2 tsp oregano&lt;/li&gt;
+&lt;li&gt;Half a tube tomato purée&lt;/li&gt;
+&lt;li&gt;1 tin kidney beans&lt;/li&gt;
+&lt;li&gt;1 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;h2&gt;Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 kg ground beef&lt;/li&gt;
+&lt;li&gt;2 onions&lt;/li&gt;
+&lt;li&gt;4 garlic cloves&lt;/li&gt;
+&lt;li&gt;2 tsp cumin&lt;/li&gt;
+&lt;li&gt;2 tsp smoked paprika&lt;/li&gt;
+&lt;li&gt;2 tsp chilli powder&lt;/li&gt;
+&lt;li&gt;2 tsp oregano&lt;/li&gt;
+&lt;li&gt;Half a tube tomato purée&lt;/li&gt;
+&lt;li&gt;1 tin kidney beans&lt;/li&gt;
+&lt;li&gt;1 tin of tomatoes&lt;/li&gt;
+&lt;li&gt;1 tin of water&lt;/li&gt;
+&lt;li&gt;Salt/pepper&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Fillings: rice, cheese, salsa/tomato, lettuce, sour cream, avocado/guac, lime/coriander.&lt;/p&gt;
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;p&gt;Fry the onions in a tablespoon of coconut oil until slightly browned.&lt;/p&gt;
+&lt;p&gt;Hard fry the beef in a heavy based pan until fully browned. &lt;/p&gt;
+&lt;p&gt;Drain off any excess fat.&lt;/p&gt;
+&lt;p&gt;Add the rest of the ingredients taking care to not burn the spices.&lt;/p&gt;
+&lt;p&gt;Cook for an hour.&lt;/p&gt;</content><category term="Cooking"></category></entry><entry><title>Running DiffusionGemma on RunPod</title><link href="https://blog.cathalanddad.com/running-diffusiongemma-on-runpod.html" rel="alternate"></link><published>2026-08-08T00:00:00+02:00</published><updated>2026-08-08T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-08-08:/running-diffusiongemma-on-runpod.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
 &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
 &lt;script&gt;
   window.dataLayer = window.dataLayer || [];
@@ -554,7 +606,7 @@ I used th o3 model with is pretty powerful. It did almost a minute's thinking be
   gtag('config', 'G-FYDC27JYB4');
 &lt;/script&gt;
 
-&lt;video width="320" height="240" controls&gt;
+&lt;video width="320" height="240" controls preload="none"&gt;
   &lt;source src="https://blog.cathalanddad.com/video/video.mp4" type="video/mp4"&gt;
 Your browser does not support the video tag.
 &lt;/video&gt;</content><category term="Physics"></category></entry><entry><title>Hyperefficient</title><link href="https://blog.cathalanddad.com/hyperefficient.html" rel="alternate"></link><published>2025-04-04T12:44:00+02:00</published><updated>2025-04-04T12:44:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2025-04-04:/hyperefficient.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;

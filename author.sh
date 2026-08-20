@@ -1,1 +1,4 @@
-pelican --autoreload --listen --port 8001
+#!/bin/bash
+set -e
+
+.venv/bin/invoke livereload

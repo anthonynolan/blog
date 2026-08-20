@@ -30,16 +30,16 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/running-diffusiongemma-on-runpod.html">Running DiffusionGemma on RunPod</a></h1>
+                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/beef-burritos.html">Beef Burritos</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2026-08-08T00:00:00+02:00">
-                Published: Sat 08 August 2026
+        <abbr class="published" title="2026-08-20T00:00:00+02:00">
+                Published: Thu 20 August 2026
         </abbr>
 
                 <address class="vcard author">
                         By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="https://blog.cathalanddad.com/category/ai.html">AI</a>.</p>
+        <p>In <a href="https://blog.cathalanddad.com/category/cooking.html">Cooking</a>.</p>
         
 </footer><!-- /.post-info --><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -51,55 +51,65 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<p>I have been doing some experiments with diffusion models for images recently. I wanted to try out <a href="https://ai.google.dev/gemma/docs/diffusiongemma">DiffusionGemma</a> which is an experimental text diffusion model from Google. I would have guessed that diffusion would be slower at producing text than a normal autoregressive language model, but that does not appear to be the case. Text diffusion models, like the image models do not produce one token at a time. Instead they incrementally update a single space - an image or a canvas of text in this case. The first thing to do was get the model running. </p>
-<h2>Local</h2>
-<p>I have a windows laptop with a basic consumer grade GPU (NVIDIA GeForce RTX 4050). It has about 6 Gb of VRAM which is tiny compared to something designed for AI rather than basic gaming. I have however been able to run a variety of largish text models there for experimentation purposes. I find it faster to iterate this way than I would if I had to be constantly moving code to a GPU on RunPod. This turned out to be impossible for a model the size of DiffusionGemma. It is an open weight model and I had wrongly assumed that this meant it was small. I tried to load the model from Hugging Face using <code>device_map="auto"</code>. This resulted in the model being spread across CPU and GPU and giving some very bad errors when I tried to generate (matrix shape mismatches). A bit of exploration revealed that this was a GPU memory issue. It is possible that I could have gotten the model running on CPU along where I have a lot more memory, but inference would have been extremely slow if it was possible at all. So I switched to RunPod. </p>
-<h2>RunPod</h2>
-<p>First efforts here failed too because of the memory issue. I found a way to figure out how much memory a model would need. Running this:</p>
-<div class="highlight"><pre><span></span><code>uv run accelerate estimate-memory google/diffusiongemma-26B-A4B-it
-</code></pre></div>
-
-<p>(with the accelerate lib added to your uv project) </p>
-<p>returns the memory requirements for a few levels of quantization. I don't think these quantizations necessarily have to exist, so just check which one you are expecting to use in the HF or other docs. </p>
-<p>This is useful too and should give some memory requirement numbers. But note that once the model is in your cache it will not give you correct numbers:</p>
-<div class="highlight"><pre><span></span><code><span class="n">uv</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">hf</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="n">google</span><span class="o">/</span><span class="n">diffusiongemma</span><span class="o">-</span><span class="mi">26</span><span class="n">B</span><span class="o">-</span><span class="n">A4B</span><span class="o">-</span><span class="n">it</span><span class="w"> </span><span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span>
-</code></pre></div>
-
-<p>So I picked an H200 GPU on RunPod with 141 Gb of VRAM, enough to fit all of the layers. I don't think this is a very exact science. Beyond the numbers given by the <code>estimate-memory</code> call above there are other memory requirements which I have found a bit more difficult to get handle on. I gave myself a bit of headroom and everything seemed to work fine. </p>
-<p>This model uses some very cutting edge technologies and will need a recent version of torch to work properly. Initially I was getting an error because my GPU did not support a particular type of matrix multiplication which is useful for MOE models - of which <code>gemma-diff</code> is one. An additional parameter got me out of this. But getting the right version of the libs to work required a bit of trial and error. (Hence this post)</p>
-<p>Next up I ssh'd to the server and installed the most recent version of uv. If I used pip to do this, which is my normal way, I got an old version of uv which did not allow me to exclude deps. So to install uv I did this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">LsSf</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">astral</span><span class="o">.</span><span class="n">sh</span><span class="o">/</span><span class="n">uv</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sh</span>
-<span class="k">export</span><span class="w"> </span><span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/.local/bin:$PATH&quot;</span>
-<span class="nb">hash</span><span class="w"> </span><span class="o">-</span><span class="n">r</span>
-<span class="n">uv</span><span class="w"> </span><span class="o">--</span><span class="n">version</span>
-</code></pre></div>
-
-<p>Then I figured out where the local python 3 was installed and made sure I was happy with the version. If that is ok you can run this:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">uv</span><span class="w"> </span><span class="nx">venv</span><span class="w"> </span><span class="o">--</span><span class="nx">python</span><span class="w"> </span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">python</span><span class="w"> </span><span class="o">--</span><span class="nx">system</span><span class="o">-</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span>
-</code></pre></div>
-
-<p>The <code>--system-site-packages</code> is necessary to make sure that the venv is not completely isolated from the local site packages. Without that uv will download all of the (huge) packages required to get this to work. </p>
-<p>Then run <code>uv sync</code> if it shows you a long line up of packages that it is slowly downloading, something is wrong. These pods include version of the cuda drivers, torch and some other things to make this setup faster. </p>
-<p>Nearly ready to start the jupyter notebook in RunPod. To install your kernel do this:</p>
-<div class="highlight"><pre><span></span><code>uv run python -m ipykernel install --user --name diffusion --display-name &quot;Python (diffusion)&quot;
-</code></pre></div>
-
-<p>Then open your notebook, select that kernel and you should be able to run things. </p>
-<h2>Running a few experiments</h2>
-<p>My experiments are very minimal. I ran inference: <em>Why is the sky blue?</em> and then I played with streaming. I did not check the quality of the outputs, but did notice that it seemed very fast at producing tokens.</p>
-<h2>Speed results compared to Artificial Analysis</h2>
-<p>You can see from this tiny experiment that DiffusionGemma produced 271 tokens in 0.7s. This is roughly 387 tokens per minute.</p>
-<p><img src="https://blog.cathalanddad.com/images/diffusion/gemma_speed.png" alt="gemma-speed"/></p>
-<p>From Artificial Analysis that is roughly the speed of Gemini Flash Lite:</p>
-<p><img src="https://blog.cathalanddad.com/images/diffusion/artificial.png" alt="artificial-analysis"/></p>
-<p>Artificial Analysis uses a slightly different method to count tokens (settling on OpenAI tokens for all output), but this is unlikely to make much difference. </p>
-<h2>Code</h2>
-<p>You can find the code for this <a href="https://github.com/anthonynolan/diffusion_experiments">here</a> the specific notebook is the <code>diffusion_gemma.ipynb</code> one. </p>                    </article>
+<h2>Ingredients</h2>
+<ul>
+<li>1 kg ground beef</li>
+<li>2 onions</li>
+<li>4 garlic cloves</li>
+<li>2 tsp cumin</li>
+<li>2 tsp smoked paprika</li>
+<li>2 tsp chilli powder</li>
+<li>2 tsp oregano</li>
+<li>Half a tube tomato purée</li>
+<li>1 tin kidney beans</li>
+<li>1 tin of tomatoes</li>
+<li>1 tin of water</li>
+<li>Salt/pepper</li>
+</ul>
+<p>Fillings: rice, cheese, salsa/tomato, lettuce, sour cream, avocado/guac, lime/coriander.</p>
+<h2>Method</h2>
+<p>Fry the onions in a tablespoon of coconut oil until slightly browned.</p>
+<p>Hard fry the beef in a heavy based pan until fully browned. </p>
+<p>Drain off any excess fat.</p>
+<p>Add the rest of the ingredients taking care to not burn the spices.</p>
+<p>Cook for an hour.</p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
                         <hr />
                         <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/running-diffusiongemma-on-runpod.html" rel="bookmark"
+                               title="Permalink to Running DiffusionGemma on RunPod">Running DiffusionGemma on RunPod</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2026-08-08T00:00:00+02:00">
+                Published: Sat 08 August 2026
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="https://blog.cathalanddad.com/category/ai.html">AI</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<p>I have been doing some experiments with diffusion models for images recently. I wanted to try out <a href="https://ai.google.dev/gemma/docs/diffusiongemma">DiffusionGemma</a> which is an experimental text diffusion model from Google. I would have guessed that diffusion would …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/running-diffusiongemma-on-runpod.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>
@@ -521,7 +531,7 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<video width="320" height="240" controls>
+<video width="320" height="240" controls preload="none">
   <source src="https://blog.cathalanddad.com/video/video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
