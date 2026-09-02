@@ -30,10 +30,10 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/seedance-25.html">Seedance 2.5</a></h1>
+                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/stable-diffusion.html">Stable Diffusion</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2026-09-01T00:00:00+02:00">
-                Published: Tue 01 September 2026
+        <abbr class="published" title="2026-09-02T00:00:00+02:00">
+                Published: Wed 02 September 2026
         </abbr>
 
                 <address class="vcard author">
@@ -51,16 +51,98 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<p>Trying out Seedance 2.5 for text to video</p>
-<p>I have heard a lot of hype about Bytedance's latest text to video model - Seedance 2.5. I bought some credits yesterday and gave it a go. The process of buying credits was not straightforward. When I searched for the website there seemed to be a bunch of noise - other websites with similar names. This goes along with the hype I guess, but when you are handing over a credit card this is a bit of a pain. I asked chat gpt for the url. This seems very backward, llms can easily get this stuff wrong, but I got to the right place in the end. The base credits package was about $30 which is perfectly fine for an initial trial. And those credits last 90 days. </p>
-<p>Seedance takes a set of references. I just used photos, but you can use a wide variety of them from audio to clay renders from Blender. My son is a big fan of blender and has recently made a model of a steam train. He exported a nice render of this and we used it as the only reference. Initially I had wanted to add pictures of my 2 kids and put them in the video, but this gave an error because they are real people. Not sure what would constitute a sufficiently fake person to get past this filter, but for now I just removed them. </p>
-<p>My prompt was "A boy playing with lego while a slightly older girl does Irish Dancing beside him". I did not mention the train, but it appeared in the video anyway which is just what we wanted. This is the video <a href="here">https://youtu.be/UFNJ7tPVfQw?si=TgyDEocmkspR2sGy</a>. And my son did want laser eyes, so that is spot on. Although the subject is silly the quality of the video is excellent. It took about 3 minutes to generate this 4 second clip and it cost about 50 cent. </p>
-<p>This model is not yet on the Artificial Analysis leaderboard for Text to Video, but will almost certainly be near the top. I have plenty more credit left to use, so will probably try to make some more videos soon.</p>                    </article>
+<p>It has been a while since stable diffusion has been the king of image models. For day to day image generation leading llms have become very good at this - Chat GPT for example can produce very high quality images. I wanted to understand a bit more about how these models work, so the first step is to give them a try.</p>
+<p>You can get Stable Diffusion from Huggingface. <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4">Here</a> is the 1.4 variant which seems to be most recent version available. This code is enough to get you a pipeline from which you can generate images:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diffusers</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">StableDiffusionPipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">HTML</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">FuncAnimation</span>
+
+<span class="n">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CompVis/stable-diffusion-v1-4&quot;</span>
+<span class="n">device</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cuda&quot;</span>
+
+<span class="n">pipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StableDiffusionPipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span><span class="w"> </span><span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+<span class="n">pipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pipe</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This code will give you an image. There is huge variability in the output and some of it is pretty bad compared to what we have become used to recently, but a model like this is probably more amenable to playing with and figuring out the internals. </p>
+<div class="highlight"><pre><span></span><code>prompt = &quot;a photo of an astronaut riding a horse on Mars&quot;
+
+image = pipe(prompt).images[0]  
+
+display(image)
+</code></pre></div>
+
+<p>This call to the pipeline uses the default number of iterations which is 50. </p>
+<p>I was interested in looking at the progress of the image generation process. Stable Diffusion does its iterations on the latent space rather than directly on image space. Only at the last step is the most recent version of the latent space turned into an image. So to see progress a callback is needed. This is computationally expensive. The decoding of the latent space into an image is usually once per generation sequence, with the callback it is happening maybe every time. Even with this though on my laptop GPU I can generate an image in about 20 seconds. </p>
+<p>This is the code for the callback. </p>
+<div class="highlight"><pre><span></span><code><span class="nx">frames</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[]</span>
+<span class="nx">def</span><span class="w"> </span><span class="nx">callback</span><span class="p">(</span><span class="nx">pipe</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="p">,</span><span class="w"> </span><span class="nx">timestep</span><span class="p">,</span><span class="w"> </span><span class="nx">cwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="nx">latents</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cwargs</span><span class="p">[</span><span class="s">&quot;latents&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="nx">with</span><span class="w"> </span><span class="nx">torch</span><span class="p">.</span><span class="nx">no_grad</span><span class="p">():</span>
+<span class="w">        </span><span class="nx">decoded</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">pipe</span><span class="p">.</span><span class="nx">vae</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span>
+<span class="w">            </span><span class="nx">latents</span><span class="o">/</span><span class="nx">pipe</span><span class="p">.</span><span class="nx">vae</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">scaling_factor</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">return_dict</span><span class="p">=</span><span class="nx">False</span>
+<span class="w">        </span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="w">    </span><span class="nx">images</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">pipe</span><span class="p">.</span><span class="nx">image_processor</span><span class="p">.</span><span class="nx">postprocess</span><span class="p">(</span>
+<span class="w">        </span><span class="nx">decoded</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">output_type</span><span class="p">=</span><span class="s">&quot;pil&quot;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="nx">frames</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">cwargs</span>
+
+
+<span class="nx">image</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">pipe</span><span class="p">(</span><span class="nx">prompt</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="nx">num_inference_steps</span><span class="p">=</span><span class="mi">30</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">callback_on_step_end</span><span class="p">=</span><span class="nx">callback</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">callback_on_step_end_tensor_inputs</span><span class="p">=[</span><span class="s">&quot;latents&quot;</span><span class="p">]).</span><span class="nx">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w">  </span>
+</code></pre></div>
+
+<p>This gives you a list of images which you can then page through in an animation. One of the things that came up from doing this was that more iterations is not necessarily better. About 30 seems to get a good result. If the model makes a gross mistake initially no number of refining iterations is going to fix that. This is a bit of a relief as I always feel that more compute would get me a better result, but that is not the case here. </p>
+<p>Overall this is a fun tool to play with. You can examine the model and pull out individual components to use them. This is exactly what is happing in the callback code above using the vae layer. </p>
+<p>And here are some examples of the images I have created</p>
+<p><img alt="image" src="images/diffusion/astronaut_rides_horse.png"></p>
+<p><img alt="image" src="images/diffusion/astronaut_rides_horse2.png"></p>
+<p>They are definitely astronauts riding a horse on Mars alright.</p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
                         <hr />
                         <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/seedance-25.html" rel="bookmark"
+                               title="Permalink to Seedance 2.5">Seedance 2.5</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2026-09-01T00:00:00+02:00">
+                Published: Tue 01 September 2026
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="https://blog.cathalanddad.com/category/ai.html">AI</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<p>Trying out Seedance 2.5 for text to video</p>
+<p>I have heard a lot of hype about Bytedance's latest text to video model - Seedance 2.5. I bought some credits yesterday and gave it …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/seedance-25.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>

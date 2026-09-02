@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-09-01T00:00:00+02:00</updated><entry><title>Seedance 2.5</title><link href="https://blog.cathalanddad.com/seedance-25.html" rel="alternate"></link><published>2026-09-01T00:00:00+02:00</published><updated>2026-09-01T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-01:/seedance-25.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-09-02T00:00:00+02:00</updated><entry><title>Stable Diffusion</title><link href="https://blog.cathalanddad.com/stable-diffusion.html" rel="alternate"></link><published>2026-09-02T00:00:00+02:00</published><updated>2026-09-02T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-02:/stable-diffusion.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;It has been a while since stable diffusion has been the king of image models. For day to day image generation leading llms have become very good at this - Chat GPT for example can …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;It has been a while since stable diffusion has been the king of image models. For day to day image generation leading llms have become very good at this - Chat GPT for example can produce very high quality images. I wanted to understand a bit more about how these models work, so the first step is to give them a try.&lt;/p&gt;
+&lt;p&gt;You can get Stable Diffusion from Huggingface. &lt;a href="https://huggingface.co/CompVis/stable-diffusion-v1-4"&gt;Here&lt;/a&gt; is the 1.4 variant which seems to be most recent version available. This code is enough to get you a pipeline from which you can generate images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;torch&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;diffusers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;StableDiffusionPipeline&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;IPython.display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HTML&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;matplotlib.animation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FuncAnimation&lt;/span&gt;
+
+&lt;span class="n"&gt;model_id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;CompVis/stable-diffusion-v1-4&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cuda&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;pipe&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;StableDiffusionPipeline&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;from_pretrained&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;torch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;float16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;pipe&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pipe&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This code will give you an image. There is huge variability in the output and some of it is pretty bad compared to what we have become used to recently, but a model like this is probably more amenable to playing with and figuring out the internals. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;prompt = &amp;quot;a photo of an astronaut riding a horse on Mars&amp;quot;
+
+image = pipe(prompt).images[0]  
+
+display(image)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This call to the pipeline uses the default number of iterations which is 50. &lt;/p&gt;
+&lt;p&gt;I was interested in looking at the progress of the image generation process. Stable Diffusion does its iterations on the latent space rather than directly on image space. Only at the last step is the most recent version of the latent space turned into an image. So to see progress a callback is needed. This is computationally expensive. The decoding of the latent space into an image is usually once per generation sequence, with the callback it is happening maybe every time. Even with this though on my laptop GPU I can generate an image in about 20 seconds. &lt;/p&gt;
+&lt;p&gt;This is the code for the callback. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;frames&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="nx"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;step&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timestep&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;cwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;latents&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;cwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;latents&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;with&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;torch&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;no_grad&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;decoded&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;vae&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;latents&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;vae&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;scaling_factor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;return_dict&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;False&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;images&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;image_processor&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;postprocess&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;decoded&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;output_type&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pil&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;frames&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;images&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;cwargs&lt;/span&gt;
+
+
+&lt;span class="nx"&gt;image&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;prompt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;num_inference_steps&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;callback_on_step_end&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;callback_on_step_end_tensor_inputs&lt;/span&gt;&lt;span class="p"&gt;=[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;latents&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]).&lt;/span&gt;&lt;span class="nx"&gt;images&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This gives you a list of images which you can then page through in an animation. One of the things that came up from doing this was that more iterations is not necessarily better. About 30 seems to get a good result. If the model makes a gross mistake initially no number of refining iterations is going to fix that. This is a bit of a relief as I always feel that more compute would get me a better result, but that is not the case here. &lt;/p&gt;
+&lt;p&gt;Overall this is a fun tool to play with. You can examine the model and pull out individual components to use them. This is exactly what is happing in the callback code above using the vae layer. &lt;/p&gt;
+&lt;p&gt;And here are some examples of the images I have created&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="images/diffusion/astronaut_rides_horse.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="images/diffusion/astronaut_rides_horse2.png"&gt;&lt;/p&gt;
+&lt;p&gt;They are definitely astronauts riding a horse on Mars alright.&lt;/p&gt;</content><category term="AI"></category></entry><entry><title>Seedance 2.5</title><link href="https://blog.cathalanddad.com/seedance-25.html" rel="alternate"></link><published>2026-09-01T00:00:00+02:00</published><updated>2026-09-01T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-01:/seedance-25.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
 &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
 &lt;script&gt;
   window.dataLayer = window.dataLayer || [];
