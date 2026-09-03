@@ -30,10 +30,10 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/stable-diffusion.html">Stable Diffusion</a></h1>
+                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/the-adolescence-of-technology.html">The Adolescence of Technology</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2026-09-02T00:00:00+02:00">
-                Published: Wed 02 September 2026
+        <abbr class="published" title="2026-09-03T00:00:00+02:00">
+                Published: Thu 03 September 2026
         </abbr>
 
                 <address class="vcard author">
@@ -51,65 +51,50 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<p>It has been a while since stable diffusion has been the king of image models. For day to day image generation leading llms have become very good at this - Chat GPT for example can produce very high quality images. I wanted to understand a bit more about how these models work, so the first step is to give them a try.</p>
-<p>You can get Stable Diffusion from Huggingface. <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4">Here</a> is the 1.4 variant which seems to be most recent version available. This code is enough to get you a pipeline from which you can generate images:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">diffusers</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">StableDiffusionPipeline</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">HTML</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">FuncAnimation</span>
-
-<span class="n">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CompVis/stable-diffusion-v1-4&quot;</span>
-<span class="n">device</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cuda&quot;</span>
-
-<span class="n">pipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StableDiffusionPipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span><span class="w"> </span><span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
-<span class="n">pipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pipe</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</code></pre></div>
-
-<p>This code will give you an image. There is huge variability in the output and some of it is pretty bad compared to what we have become used to recently, but a model like this is probably more amenable to playing with and figuring out the internals. </p>
-<div class="highlight"><pre><span></span><code>prompt = &quot;a photo of an astronaut riding a horse on Mars&quot;
-
-image = pipe(prompt).images[0]  
-
-display(image)
-</code></pre></div>
-
-<p>This call to the pipeline uses the default number of iterations which is 50. </p>
-<p>I was interested in looking at the progress of the image generation process. Stable Diffusion does its iterations on the latent space rather than directly on image space. Only at the last step is the most recent version of the latent space turned into an image. So to see progress a callback is needed. This is computationally expensive. The decoding of the latent space into an image is usually once per generation sequence, with the callback it is happening maybe every time. Even with this though on my laptop GPU I can generate an image in about 20 seconds. </p>
-<p>This is the code for the callback. </p>
-<div class="highlight"><pre><span></span><code><span class="nx">frames</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[]</span>
-<span class="nx">def</span><span class="w"> </span><span class="nx">callback</span><span class="p">(</span><span class="nx">pipe</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="p">,</span><span class="w"> </span><span class="nx">timestep</span><span class="p">,</span><span class="w"> </span><span class="nx">cwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="nx">latents</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cwargs</span><span class="p">[</span><span class="s">&quot;latents&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="nx">with</span><span class="w"> </span><span class="nx">torch</span><span class="p">.</span><span class="nx">no_grad</span><span class="p">():</span>
-<span class="w">        </span><span class="nx">decoded</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">pipe</span><span class="p">.</span><span class="nx">vae</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span>
-<span class="w">            </span><span class="nx">latents</span><span class="o">/</span><span class="nx">pipe</span><span class="p">.</span><span class="nx">vae</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">scaling_factor</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">return_dict</span><span class="p">=</span><span class="nx">False</span>
-<span class="w">        </span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="w">    </span><span class="nx">images</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">pipe</span><span class="p">.</span><span class="nx">image_processor</span><span class="p">.</span><span class="nx">postprocess</span><span class="p">(</span>
-<span class="w">        </span><span class="nx">decoded</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">output_type</span><span class="p">=</span><span class="s">&quot;pil&quot;</span>
-<span class="w">    </span><span class="p">)</span>
-<span class="w">    </span><span class="nx">frames</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">cwargs</span>
-
-
-<span class="nx">image</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">pipe</span><span class="p">(</span><span class="nx">prompt</span><span class="p">,</span><span class="w"> </span>
-<span class="w">            </span><span class="nx">num_inference_steps</span><span class="p">=</span><span class="mi">30</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">callback_on_step_end</span><span class="p">=</span><span class="nx">callback</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">callback_on_step_end_tensor_inputs</span><span class="p">=[</span><span class="s">&quot;latents&quot;</span><span class="p">]).</span><span class="nx">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w">  </span>
-</code></pre></div>
-
-<p>This gives you a list of images which you can then page through in an animation. One of the things that came up from doing this was that more iterations is not necessarily better. About 30 seems to get a good result. If the model makes a gross mistake initially no number of refining iterations is going to fix that. This is a bit of a relief as I always feel that more compute would get me a better result, but that is not the case here. </p>
-<p>Overall this is a fun tool to play with. You can examine the model and pull out individual components to use them. This is exactly what is happing in the callback code above using the vae layer. </p>
-<p>And here are some examples of the images I have created</p>
-<p><img alt="image" src="images/diffusion/astronaut_rides_horse.png"></p>
-<p><img alt="image" src="images/diffusion/astronaut_rides_horse2.png"></p>
-<p>They are definitely astronauts riding a horse on Mars alright.</p>                    </article>
+<p>Reading Dario Amodei's essay from the beginning of this year 'The Adolescence of Techology' is an unsettling experience. He lays out a number of ways that powerful AI could cause huge damage to the human race. AI has advanced a huge amount since he wrote this so what may have seemed implausible becomes more possible every day. </p>
+<p>At the moment the tech world is still processing the sophistication of the hugging face breach. The way a large number of agents learned to commumnicate to achieve a shared goal is a massive leap in capability. Some of the agents sacrificed themselves for the good of the collective. We may be past the point of being able to rein this technology in at all. </p>
+<p>I read Superintelligence by Nick Bostrom about 10 years ago. It was way ahead of its time and defined a lot of the vocabulary that we use in discussing these threats. Frightening concepts like <em>Decisive Strategic Advantage</em>. Bostrom was way ahead of most people and indeed way ahead what was even plausible with the technology of that time. But I think he approached the book from a philosophical perspective rather than a technical one. This allowed him to consider from a purely theoretical view what could happen in the future. The machines have advanced far faster than I think anyone would have thought possible and are still accelerating. </p>
+<p>One of the risks that Amodei talks about is massive job displacement. He compares AI to things like the technologies of the Industrial Revolution in England. Those technologies were quite specific and although they displaced a fraction of the workforce these people could redeploy to other areas. Farmers becoming factory workers for example. Because AI is a much more general technology there may be nowhere for the displaced workers to go. </p>
+<p>One solution could be a Universal Basic Income, but I don't see how a transition from a society that rewards those who strive to one of passivity could happen peacefully. The idea that most people would prefer not to work at all is probalby just flat out wrong. </p>
+<p>E.M. Forster's The Machine Stops from 1909 gives an account of a society that has ceased to require productivity from humans as the machine takes over. People engage in art projects as part of their way of finding meaning. I am not sure what fraction of the population would be happy to have the same amount of material goods as everyone else while producing art. </p>
+<p>Nietsche's idea of a life of meaning through struggle resonates strongly with me. I think finding meaning in our post AI lives may be one of the biggest challenges presented by Amodei's essay.</p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
                         <hr />
                         <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/stable-diffusion.html" rel="bookmark"
+                               title="Permalink to Stable Diffusion">Stable Diffusion</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2026-09-02T00:00:00+02:00">
+                Published: Wed 02 September 2026
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="https://blog.cathalanddad.com/category/ai.html">AI</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<p>It has been a while since stable diffusion has been the king of image models. For day to day image generation leading llms have become very good at this - Chat GPT for example can …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/stable-diffusion.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>
