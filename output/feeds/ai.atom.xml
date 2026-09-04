@@ -36,6 +36,8 @@ image = pipe(prompt).images[0]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img alt="image" src="images/astronaut_rides_horse-sd3_5.png"&gt;&lt;/p&gt;
+&lt;p&gt;And this is a version from 1.4&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="images/astronaut_rides_horse-sd1_4.png"&gt;&lt;/p&gt;
 &lt;p&gt;So pretty much worth the wait. A big leap in image quality and the prompt is extremely basic too. The hardware I have is just not suitable for this level of model, but the result shows what can be done with open technology. &lt;/p&gt;</content><category term="AI"></category></entry><entry><title>The Adolescence of Technology</title><link href="https://blog.cathalanddad.com/the-adolescence-of-technology.html" rel="alternate"></link><published>2026-09-03T00:00:00+02:00</published><updated>2026-09-03T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-03:/the-adolescence-of-technology.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
 &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
 &lt;script&gt;
