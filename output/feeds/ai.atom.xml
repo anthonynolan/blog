@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad - AI</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/ai.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-09-03T00:00:00+02:00</updated><entry><title>The Adolescence of Technology</title><link href="https://blog.cathalanddad.com/the-adolescence-of-technology.html" rel="alternate"></link><published>2026-09-03T00:00:00+02:00</published><updated>2026-09-03T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-03:/the-adolescence-of-technology.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad - AI</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/ai.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-09-03T00:00:00+02:00</updated><entry><title>Stable Diffusion 3.5</title><link href="https://blog.cathalanddad.com/stable-diffusion-35.html" rel="alternate"></link><published>2026-09-03T00:00:00+02:00</published><updated>2026-09-03T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-03:/stable-diffusion-35.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;My previous experiments with Stable Diffusion have used an older (and smaller) version: 1.4. The most recent version available is 3.5. There have been a lot of changes so I wanted to …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;My previous experiments with Stable Diffusion have used an older (and smaller) version: 1.4. The most recent version available is 3.5. There have been a lot of changes so I wanted to see if image generation itself had improved much. &lt;/p&gt;
+&lt;p&gt;This is the model_id and pipeline to use for this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;model_id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stabilityai/stable-diffusion-3.5-medium&amp;quot;&lt;/span&gt;
+&lt;span class="nx"&gt;device&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;cuda&amp;quot;&lt;/span&gt;
+
+&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;StableDiffusion3Pipeline&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;from_pretrained&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;model_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;torch&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;float16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;pipe&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;to&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;device&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This model weighs in at 16 Gb on disk, so be prepared for a wait, but once it is in your cache it is just a few seconds to get it into memory. &lt;/p&gt;
+&lt;p&gt;My overall plan here is to investigate morphing one face into another. I had been using 1.4 which is nice and light, but got quite blurred results for the intermediates. Not much better than just tweening pixel intensities I would say. This is why I made the jump to the bigger model. However I won't be doing many experiments with 3.5 as it is just too compute hungry. My small gpu on my laptop took 25 minutes to produce a single image based on this code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;prompt = &amp;quot;a photo of an astronaut riding a horse on Mars&amp;quot;
+
+image = pipe(prompt).images[0]  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="image" src="images/astronaut_rides_horse-sd3_5.png"&gt;&lt;/p&gt;
+&lt;p&gt;So pretty much worth the wait. A big leap in image quality and the prompt is extremely basic too. The hardware I have is just not suitable for this level of model, but the result shows what can be done with open technology. &lt;/p&gt;</content><category term="AI"></category></entry><entry><title>The Adolescence of Technology</title><link href="https://blog.cathalanddad.com/the-adolescence-of-technology.html" rel="alternate"></link><published>2026-09-03T00:00:00+02:00</published><updated>2026-09-03T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-03:/the-adolescence-of-technology.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
 &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
 &lt;script&gt;
   window.dataLayer = window.dataLayer || [];
