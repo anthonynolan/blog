@@ -16,6 +16,7 @@
                                                 <li><a href="https://blog.cathalanddad.com/category/ai.html">AI</a></li>
                                                 <li><a href="https://blog.cathalanddad.com/category/books.html">Books</a></li>
                                                 <li><a href="https://blog.cathalanddad.com/category/cooking.html">Cooking</a></li>
+                                                <li><a href="https://blog.cathalanddad.com/category/grimoire.html">Grimoire</a></li>
                                                 <li><a href="https://blog.cathalanddad.com/category/health.html">Health</a></li>
                                                 <li><a href="https://blog.cathalanddad.com/category/image-processing.html">Image processing</a></li>
                                                 <li><a href="https://blog.cathalanddad.com/category/knowledge-engineering.html">Knowledge Engineering</a></li>
@@ -30,16 +31,16 @@
 
                 <aside id="featured" class="body">
                     <article>
-                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/stable-diffusion-35.html">Stable Diffusion 3.5</a></h1>
+                        <h1 class="entry-title"><a href="https://blog.cathalanddad.com/habit-tracker.html">Habit Tracker</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2026-09-03T00:00:00+02:00">
-                Published: Thu 03 September 2026
+        <abbr class="published" title="2026-09-05T00:00:00+02:00">
+                Published: Sat 05 September 2026
         </abbr>
 
                 <address class="vcard author">
                         By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
                 </address>
-        <p>In <a href="https://blog.cathalanddad.com/category/ai.html">AI</a>.</p>
+        <p>In <a href="https://blog.cathalanddad.com/category/grimoire.html">Grimoire</a>.</p>
         
 </footer><!-- /.post-info --><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
@@ -51,31 +52,45 @@
   gtag('config', 'G-FYDC27JYB4');
 </script>
 
-<p>My previous experiments with Stable Diffusion have used an older (and smaller) version: 1.4. The most recent version available is 3.5. There have been a lot of changes so I wanted to see if image generation itself had improved much. </p>
-<p>This is the model_id and pipeline to use for this:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">model_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;stabilityai/stable-diffusion-3.5-medium&quot;</span>
-<span class="nx">device</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;cuda&quot;</span>
-
-<span class="nx">pipe</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">StableDiffusion3Pipeline</span><span class="p">.</span><span class="nx">from_pretrained</span><span class="p">(</span><span class="nx">model_id</span><span class="p">,</span><span class="w"> </span><span class="nx">dtype</span><span class="p">=</span><span class="nx">torch</span><span class="p">.</span><span class="nx">float16</span><span class="p">)</span>
-<span class="nx">pipe</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">pipe</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="nx">device</span><span class="p">)</span>
-</code></pre></div>
-
-<p>This model weighs in at 16 Gb on disk, so be prepared for a wait, but once it is in your cache it is just a few seconds to get it into memory. </p>
-<p>My overall plan here is to investigate morphing one face into another. I had been using 1.4 which is nice and light, but got quite blurred results for the intermediates. Not much better than just tweening pixel intensities I would say. This is why I made the jump to the bigger model. However I won't be doing many experiments with 3.5 as it is just too compute hungry. My small gpu on my laptop took 25 minutes to produce a single image based on this code.</p>
-<div class="highlight"><pre><span></span><code>prompt = &quot;a photo of an astronaut riding a horse on Mars&quot;
-
-image = pipe(prompt).images[0]  
-</code></pre></div>
-
-<p><img alt="image" src="images/astronaut_rides_horse-sd3_5.png"></p>
-<p>And this is a version from 1.4</p>
-<p><img alt="image" src="images/astronaut_rides_horse-sd1_4.png"></p>
-<p>So pretty much worth the wait. A big leap in image quality and the prompt is extremely basic too. The hardware I have is just not suitable for this level of model, but the result shows what can be done with open technology. </p>                    </article>
+<p>I have added a simple habit tracker to my Grimoire AI application. It just let's me tick off a daily checklist of things I want to do every day. I have been using it this week and have found it very useful so far. </p>
+<p><img alt="image" src="images/habits.png"></p>                    </article>
                 </aside><!-- /#featured -->
                     <section id="content" class="body">
                         <h1>Other articles</h1>
                         <hr />
                         <ol id="posts-list" class="hfeed">
+
+                <li><article class="hentry">
+                    <header>
+                        <h1><a href="https://blog.cathalanddad.com/stable-diffusion-35.html" rel="bookmark"
+                               title="Permalink to Stable Diffusion 3.5">Stable Diffusion 3.5</a></h1>
+                    </header>
+
+                    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2026-09-03T00:00:00+02:00">
+                Published: Thu 03 September 2026
+        </abbr>
+
+                <address class="vcard author">
+                        By                                 <a class="url fn" href="https://blog.cathalanddad.com/author/anthony.html">Anthony</a>
+                </address>
+        <p>In <a href="https://blog.cathalanddad.com/category/ai.html">AI</a>.</p>
+        
+</footer><!-- /.post-info -->                        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+</script>
+
+<p>My previous experiments with Stable Diffusion have used an older (and smaller) version: 1.4. The most recent version available is 3.5. There have been a lot of changes so I wanted to …</p>
+                        <a class="readmore" href="https://blog.cathalanddad.com/stable-diffusion-35.html">read more</a>
+                    </div><!-- /.entry-content -->
+                </article></li>
 
                 <li><article class="hentry">
                     <header>

@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-09-03T00:00:00+02:00</updated><entry><title>Stable Diffusion 3.5</title><link href="https://blog.cathalanddad.com/stable-diffusion-35.html" rel="alternate"></link><published>2026-09-03T00:00:00+02:00</published><updated>2026-09-03T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-03:/stable-diffusion-35.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cathal and Dad</title><link href="https://blog.cathalanddad.com/" rel="alternate"></link><link href="https://blog.cathalanddad.com/feeds/all.atom.xml" rel="self"></link><id>https://blog.cathalanddad.com/</id><updated>2026-09-05T00:00:00+02:00</updated><entry><title>Habit Tracker</title><link href="https://blog.cathalanddad.com/habit-tracker.html" rel="alternate"></link><published>2026-09-05T00:00:00+02:00</published><updated>2026-09-05T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-05:/habit-tracker.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have added a simple habit tracker to my Grimoire AI application. It just let's me tick off a daily checklist of things I want to do every day. I have been using it …&lt;/p&gt;</summary><content type="html">&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYDC27JYB4');
+&lt;/script&gt;
+
+&lt;p&gt;I have added a simple habit tracker to my Grimoire AI application. It just let's me tick off a daily checklist of things I want to do every day. I have been using it this week and have found it very useful so far. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="images/habits.png"&gt;&lt;/p&gt;</content><category term="Grimoire"></category></entry><entry><title>Stable Diffusion 3.5</title><link href="https://blog.cathalanddad.com/stable-diffusion-35.html" rel="alternate"></link><published>2026-09-03T00:00:00+02:00</published><updated>2026-09-03T00:00:00+02:00</updated><author><name>Anthony</name></author><id>tag:blog.cathalanddad.com,2026-09-03:/stable-diffusion-35.html</id><summary type="html">&lt;!-- Google tag (gtag.js) --&gt;
 &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-FYDC27JYB4"&gt;&lt;/script&gt;
 &lt;script&gt;
   window.dataLayer = window.dataLayer || [];
